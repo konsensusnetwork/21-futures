@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Container from '../../components/Container.astro'
+import AuthorCard from '../../components/AuthorCard.astro';
+
+import { getCollection } from "astro:content";
+
+// Get all entries from a collection.
+const authors = await getCollection("authors");
+console.log(authors)
+---
+<Layout>
+    <Container narrow={true}>
+        <!-- Authors -->
+        <h1>Authors</h1>
+        <ul class="author-list mb-12">
+        {
+            authors.map((authorEntry, index) => (
+            <li>
+                <AuthorCard
+                author={authorEntry}
+                //   switch left and right position based on index
+                position={index % 2 === 0 ? "left" : "right"}
+                />
+            </li>
+            ))
+        }
+        </ul>
+    </Container>
+  <div class="container">
+
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  .story-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+</style>

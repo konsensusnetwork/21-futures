@@ -1,16 +1,100 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon"
 
+import Container from "../components/Container.astro";
+import StoryCard from "../components/StoryCard.astro";
+import AuthorCard from "../components/AuthorCard.astro";
+import VideoPlayer from "../components/VideoPlayer.jsx";
+
+import { getCollection, getEntry } from "astro:content";
+
+// Get all entries from a collection.
+const stories = await getCollection("stories");
+const authors = await getCollection("authors");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div
+      class="next-section"
+      id="next-section"
+    >
+      <Icon name="fe:arrow-down" width="96" />
+    </div>
+  </div>
+
+  <Container>
+    <!-- About /  -->
+    <h1 hidden="true">21 Futures</h1>
+    <h2 id="target-section" >Tales From The Timechain</h2>
+
+    <VideoPlayer class="hero-video" src="./trailer.mp4" />
+
+    <h3>
+      21 Futures is a collection of short stories about the future. Each story
+      is written by a different author and explores a different possible future
+      for the world.
+    </h3>
+  </Container>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+  h2 {
+    font-size: 3rem;
+    margin: 2em 0;
+    text-align: center;
+  }
+  h3 {
+    font-size: 2rem;
+    margin: 2em 0;
+    text-align: center;
+  }
+  .hero {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .next-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional */
+    font-size: 2rem;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const nextSectionButton = document.querySelector(".next-section");
+    console.log(nextSectionButton);
+    if (nextSectionButton) {
+      nextSectionButton.addEventListener("click", scrollToNextSection);
+    }
+  });
+
+  function scrollToNextSection() {
+    const target = document.getElementById("target-section");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+</script>

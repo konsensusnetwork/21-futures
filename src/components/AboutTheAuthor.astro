@@ -1,0 +1,80 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  author: CollectionEntry<'authors'>;
+}
+const { author } = Astro.props
+---
+
+<!-- About the author -->
+<div class="author-section">
+<img
+    src={author?.data.avatar}
+    alt={author?.data.name}
+    class="author-image"
+/>
+<div class="author-info">
+    <h2 class="author-name">{author.data.name}</h2>
+    <p class="author-bio">
+    {author?.data.bio}
+    </p>
+</div>
+<a href=`/authors/${author.id}` class="follow-btn">Follow</a>
+</div>
+
+<style>
+    .author-section {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: hsl(var(--color-theme-300));
+    border-radius: 20px;
+  }
+  .author-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular image */
+    margin-right: 50px;
+  }
+  @media (max-width: 768px) {
+    .author-section {
+      flex-direction: column;
+      align-items: center; /* Center items */
+    }
+
+    .author-image {
+      margin-right: 0; /* Remove right margin */
+      margin-bottom: 20px; /* Add bottom margin */
+    }
+  }
+
+  .author-info {
+    flex: 1; /* Takes up remaining space */
+  }
+
+  .author-name {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-top: 50px;
+    color: hsl(var(--color-theme-900));
+    align-items: center;
+  }
+
+  .author-bio {
+    font-size: 1rem;
+    color: hsl(var(--color-theme-900));
+    margin-bottom: 50px;
+  }
+
+  .follow-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: hsl(var(--color-theme-900));
+    background-color: hsl(var(--color-theme-100)); /* Dark background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+</style>

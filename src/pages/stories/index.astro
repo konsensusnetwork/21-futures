@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Container from "../../components/Container.astro"
+import StoryCard from "../../components/StoryCard.astro";
+
+import { getCollection } from "astro:content";
+
+// Get all entries from a collection.
+const stories = await getCollection("stories");
+---
+
+<Layout>
+    <Container>
+      <!-- Stories -->
+      <h1>Stories</h1>
+      <ul class="story-list mb-12">
+        {
+          stories.map((storyEntry) => (
+            <li>
+              <StoryCard
+                slug={storyEntry.slug}
+                image={storyEntry.data.image}
+                title={storyEntry.data.title}
+                author={storyEntry.data.author.name}
+              />
+            </li>
+          ))
+        }
+      </ul>
+    </Container>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  .story-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+  }
+</style>

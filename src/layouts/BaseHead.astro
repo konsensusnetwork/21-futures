@@ -1,0 +1,79 @@
+---
+import settings from "../data/settings.js";
+import { ViewTransitions } from 'astro:transitions';
+
+import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: URL | string;
+  image?: string;
+}
+
+const title = Astro.props.title || settings.title;
+const description = Astro.props.description || settings.description;
+const canonicalURL =
+  Astro.props.canonicalURL || new URL(Astro.url.pathname, Astro.site);
+const image = new URL(Astro.props.image || "./favicon.png", Astro.site);
+---
+
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, viewport-fit=cover"
+/>
+
+<!-- Primary Meta Tags -->
+<title>{title || settings.title}</title>
+<meta name="title" content={title || settings.title} />
+<meta name="description" content={description || settings.description} />
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.png" type="image/png" />
+
+<!-- Apple Touch Icons -->
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="144x144"
+  href="apple-touch-icon-144x144-precomposed.png"
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="114x114"
+  href="apple-touch-icon-114x114-precomposed.png"
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="72x72"
+  href="apple-touch-icon-72x72-precomposed.png"
+/>
+<link
+  rel="apple-touch-icon-precomposed"
+  sizes="57x57"
+  href="apple-touch-icon-57x57-precomposed.png"
+/>
+
+<!-- Canonical -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={image} />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+

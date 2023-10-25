@@ -1,0 +1,53 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  author: CollectionEntry<'authors'>;
+  position: 'left' | 'right';
+}
+
+const { author, position } = Astro.props;
+---
+
+<!-- src/components/AuthorCard.astro -->
+<article class={`author-card ${position}`}>
+  <img src={author.data.avatar} alt={author.data.name} />
+  <h3><a href=`/authors/${author.id}`>{author.data.name}</a></h3>
+</article>
+
+<style>
+  .author-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsl(var(--color-theme-300));
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 8px;
+    shadow: 0 0 8px hsla(var(--color-theme-300), 0.5);
+  }
+
+  .author-card.left img {
+      order: 0;   /* Image first */
+  }
+  .author-card.left h3 {
+      order: 1;   /* Heading second */
+  }
+
+  .author-card.right img {
+      order: 1;   /* Image second */
+  }
+  .author-card.right h3 {
+      order: 0;   /* Heading first */
+  }
+
+  .author-card img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 16px;
+  }
+
+  .author-card h3 {
+    font-size: 1.5rem;
+  }
+</style>

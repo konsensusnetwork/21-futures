@@ -1,0 +1,136 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import StoryHero from "../../components/StoryHero.astro";
+import AboutTheAuthor from "../../components/AboutTheAuthor.astro";
+import { getCollection, getEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const storyEntries = await getCollection("stories");
+  console.log(storyEntries);
+  return storyEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+// 2. For your template, you can get the entry directly from the prop
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const author = await getEntry(entry.data.author);
+---
+
+<Layout>
+  <StoryHero entry={entry} />
+
+  <div class="heading-wrap">
+    <h1 id="target-section">{entry.data.title}</h1>
+    <h2 >{entry.data.excerpt}</h2>
+  </div>
+
+  <div class="content-wrap">
+    <div class="container prose-invert dark:prose-invert px-6 md:px-8 lg:px-12 prose-lg">
+      <Content />
+      <AboutTheAuthor author={author} />
+      <!-- Story Navigation -->
+      <div class="story-navigation">
+        <a href="/stories" class="previous-story-btn">Return to stories</a>
+        <a href="/path-to-next-story" class="next-story-btn">Next story</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 3rem;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .container video {
+    width: 100%;
+    height: auto;
+  }
+  .next-section {
+    position: absolute;
+    bottom: 5%; /* Position from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: hsl(
+      (var(--color-theme-300))
+    ); /* semi-transparent black */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .heading-wrap {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+
+
+  .story-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .previous-story-btn,
+  .next-story-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: hsl(var(--color-theme-300));
+    color: hsl(var(--color-theme-900));
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: background-color 0.3s ease;
+  }
+
+
+
+  @media (max-width: 768px) {
+    .story-navigation {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 15px; /* Add gap between buttons */
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const nextSectionButton = document.querySelector(".next-section");
+    console.log(nextSectionButton);
+    if (nextSectionButton) {
+      nextSectionButton.addEventListener("click", scrollToNextSection);
+    }
+  });
+
+  function scrollToNextSection() {
+    const target = document.getElementById("target-section");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+</script>
