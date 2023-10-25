@@ -1,4 +1,30 @@
-<div id="product-component-1698234084361"></div>
+---
+import Layout from "../layouts/Layout.astro"
+import Container from "../components/Container.astro"
+---
+<Layout>
+  <Container>
+    <h1>Get the book</h1>
+    <h2>Get 10% off</h2>
+    <h2>Lightning Prism-enabled</h2>
+    <p>10% of the purchase amount will be split amongst 21 authors</p>
+    <div class="buybutton" id="product-component-1698234084361"></div>
+  </Container>
+</Layout>
+<style>
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 50px 0;
+    color: hsl(var(--color-theme-600));
+    font-weight: 800;
+  }
+  .buybutton {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+  }
+</style>
 <script type="text/javascript">
 /*<![CDATA[*/
 (function () {

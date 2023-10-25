@@ -12,9 +12,17 @@ import { getCollection, getEntry } from "astro:content";
 // Get all entries from a collection.
 const stories = await getCollection("stories");
 const authors = await getCollection("authors");
+
+const seo = {
+  title: "21 Futures - Tales From The Timechain - The Bitcoin Anthology",
+  description:
+    "Dive into the depths of 21 brilliant minds as they unravel the future interwoven with the rise of bitcoin. From dystopian landscapes to utopian societies, '21 Futures' offers a view of possible worlds sculpted by the forces of mathematics.",
+  image: "./panama-one.png"
+};
+
 ---
 
-<Layout>
+<Layout seo={seo}>
   <!-- Hero Section -->
   <div class="hero">
     <div
@@ -27,7 +35,7 @@ const authors = await getCollection("authors");
 
   <Container>
     <!-- About /  -->
-    <h1 hidden="true">21 Futures</h1>
+    <h1 hidden="true">21 Futures - Uncertain tomorrows</h1>
     <h2 id="target-section" >Tales From The Timechain</h2>
 
     <!-- <VideoPlayer class="hero-video" src="./trailer.mp4" /> -->
