@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    background: linear-gradient(transparent, hsl(var(--color-theme-50)));
     /* Gradient from transparent to half opaque black */
     pointer-events: none;
     /* So that it doesn't interfere with any user interactions on the hero section */
