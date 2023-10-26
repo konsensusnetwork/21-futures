@@ -14,10 +14,10 @@ import { Icon } from 'astro-icon'
 
         <div class="footer-section">
             <div class="social-icons">
-                <a href="https://konsensus.network"><Icon name="ph:house" width="24" /></a>
-                <a href="https://youtube.com/konsensusn"><Icon name="ph:youtube-logo-light" width="24" /></a>
-                <a href="https://twitter.com/konsensusn"><Icon name="ph:twitter-logo" width="24" /></a>
-                <a href="https://bitcoinbook.shop"><Icon name="ph:books" width="24" /></a>
+                <a href="https://konsensus.network"><Icon name="ph:house" width="28" /></a>
+                <a href="https://youtube.com/konsensusn"><Icon name="ph:youtube-logo-light" width="28" /></a>
+                <a href="https://twitter.com/konsensusn"><Icon name="ph:twitter-logo" width="28" /></a>
+                <a href="https://bitcoinbook.shop"><Icon name="ph:books" width="28" /></a>
             </div>
         </div>
     </div>
@@ -28,40 +28,47 @@ import { Icon } from 'astro-icon'
     background-color: hsl(var(--color-theme));
     padding: 30px 0;  /* Reduced from 50px to reduce the total footer height */
 }
-
 .footer-container {
     width: 60%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
-
 .footer-section {
     flex: 1;
+    max-width: 250px;
     padding: 0 20px;
+    display: flex;           /* Add this */
+    flex-direction: column;  /* Add this */
+    justify-content: center; /* Vertically centers its children */
 }
-
 .footer-section h4 {
     font-weight: 'bold';
-    border-bottom: 2px solid hsl(var(--color-theme-900));
-    padding-bottom: 10px;
-    margin-bottom: 15px;  /* Reduced to 15px for tighter spacing */
     color: hsl(var(--color-theme-900));
+    text-align: center;
 }
-
+.footer-section a {
+    font-size: 30px;
+}
 .social-icons {
     display: flex;
     justify-content: space-between;
-    border-bottom: 2px solid hsl(var(--color-theme-900));
-    padding-bottom: 10px;
 }
-
 .social-icons a {
     text-decoration: none;
-    font-size: 24px;
     color: hsl(var(--color-theme-900));
     margin: 0 8px;  /* Reduced the margin for tighter icon spacing */
 }
+a:hover {
+    color: hsl(var(--color-theme-600));
+    transition: color 0.2s ease-in-out;
+    
+}
+.social-icons a:hover {
+    color: hsl(var(--color-theme-600));
+    transition: color 0.2s ease-in-out;
+}
+
 /* Responsive styles */
 @media (max-width: 767px) {
     .footer-container {
