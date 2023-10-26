@@ -1,5 +1,14 @@
 @import url("./reset.css");
 
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'GaramondPremrPro';
+  src: url('/fonts/GaramondPremrPro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -33,9 +42,31 @@
 
 html,
 body {
+  font-family: 'GaramondPremrPro';
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: hsl(var(--color-theme-50));
   color: hsl(var(--color-theme-800));
+}
+
+h1 {
+  font-family: 'GaramondPremrPro', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'GaramondPremrPro', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'GaramondPremrPro', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
 }

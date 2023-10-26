@@ -39,6 +39,7 @@ h1,
 h2,
 p {
     margin: 0;
+    font-family: 'GaramondPremrPro', sans-serif;
 }
 
 #heroImg {
@@ -62,6 +63,7 @@ p {
 h2 {
     font-size: 3rem;
     font-weight: bold;
+    text-align: left;
 }
 
 p {
@@ -122,7 +124,7 @@ p {
 }
 
 .btn:hover {
-    background-color: hsl(var(--color-theme-300));
+    background-color: hsl(var(--color-theme-100));
 }
 
 @media (max-width: 768px) {
