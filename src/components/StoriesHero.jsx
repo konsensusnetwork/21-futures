@@ -26,7 +26,7 @@ function StoriesHero({ stories }) {
 
   return (
     <div className="hero">
-      <h1 hidden={true}>Stories</h1>
+      <h1 hidden="true">Stories</h1>
       <img id="heroImg" src={activeStory.data.image} alt="Hero Image" />
       <div className="hero-content">
         <h2>{activeStory.data.title}</h2>
