@@ -4,34 +4,30 @@ import { Icon } from 'astro-icon'
 
 <!-- Footer section -->
 <div class="footer-main">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3><a href="/">Home</a></h3>
-            </div>
-            <div class="footer-section">
-                <h3><a href="/stories">Stories</a></h3>
-            </div>
-            <div class="footer-section">
-                <h3><a href="/authors">Authors</a></h3>
-            </div>
-            <div class="footer-section">
-                <h3><a href="/book">Book</a></h3>
-            </div>
-            <div class="footer-section">
-                <div class="social-icons">
-                    <a href="https://konsensus.network"><Icon name="ph:house" width="24" /></a>
-                    <a href="https://youtube.com/konsensusn"><Icon name="ph:youtube-logo-light" width="24" /></a>
-                    <a href="https://twitter.com/konsensusn"><Icon name="ph:twitter-logo" width="24" /></a>
-                    <a href="mailto:info@konsensus.network"><Icon name="ph:twitter-logo" width="24" /></a>
-                    <a href="https://bitcoinbook.shop"><Icon name="ph:books" width="24" /></a>
-                </div>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3><a href="/">Home</a></h3>
+        </div>
+        <div class="footer-section">
+            <h3><a href="/stories">Stories</a></h3>
+        </div>
+        <div class="footer-section">
+            <h3><a href="/authors">Authors</a></h3>
+        </div>
+        <div class="footer-section">
+            <div class="social-icons">
+                <a href="https://konsensus.network"><Icon name="ph:house" width="24" /></a>
+                <a href="https://youtube.com/konsensusn"><Icon name="ph:youtube-logo-light" width="24" /></a>
+                <a href="https://twitter.com/konsensusn"><Icon name="ph:twitter-logo" width="24" /></a>
+                <a href="https://bitcoinbook.shop"><Icon name="ph:books" width="24" /></a>
             </div>
         </div>
     </div>
+</div>
 
-    <style>
+<style>
 .footer-main {
-    background-color: hsl(var(--color-theme-));
+    background-color: hsl(var(--color-theme));
     padding: 30px 0;  /* Reduced from 50px to reduce the total footer height */
 }
 
@@ -67,6 +63,27 @@ import { Icon } from 'astro-icon'
     color: hsl(var(--color-theme-900));
     margin: 0 8px;  /* Reduced the margin for tighter icon spacing */
 }
+/* Responsive styles */
+@media (max-width: 767px) {
+    .footer-container {
+        width: 90%;
+        flex-direction: column; /* stack children vertically */
+        align-items: center;
+    }
 
+    .footer-section {
+        margin-bottom: 20px; /* space between sections on small screens */
+        text-align: center; /* center content */
+        padding: 0; /* reset padding */
+    }
 
-    </style>
+    .social-icons {
+        justify-content: center; /* center icons */
+    }
+
+    .social-icons a {
+        margin: 0 5px; /* reduce margin for smaller spacing on mobile */
+    }
+}
+
+</style>

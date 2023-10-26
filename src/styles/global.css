@@ -18,15 +18,15 @@
   --hue: 197;
 
   /* dark mode defaults */
-  --color-theme: var(--hue) 90% 99%;
+  --color-theme: var(--hue) 90% 2%;
   --color-theme-50: var(--hue) 85% 5%;
   --color-theme-100: var(--hue) 80% 15%;
   --color-theme-200: var(--hue) 70% 25%;
   --color-theme-300: var(--hue) 60% 35%;
   --color-theme-400: var(--hue) 50% 65%;
   --color-theme-500: var(--hue) 40% 75%;
-  --color-theme-600: var(--hue) 30% 85%;
-  --color-theme-700: var(--hue) 15% 90%;
+  --color-theme-600: var(--hue) 30% 70%;
+  --color-theme-700: var(--hue) 15% 80%;
   --color-theme-800: var(--hue) 10% 95%;
   --color-theme-900: var(--hue) 5% 98%;
 }

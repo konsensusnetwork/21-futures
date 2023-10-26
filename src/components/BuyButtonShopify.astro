@@ -1,30 +1,63 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Container from "../components/Container.astro"
+
 ---
-<Layout>
-  <Container>
-    <h1>Get the book</h1>
-    <h2>Get 10% off</h2>
-    <h2>Lightning Prism-enabled</h2>
-    <p>10% of the purchase amount will be split amongst 21 authors</p>
-    <div class="buybutton" id="product-component-1698234084361"></div>
-  </Container>
-</Layout>
+
+<div class="wrapper">
+  <h1>Order the <span class="highlight">PRESALE</span></h1>
+  <ul class="features">
+    <h2>Get 10% discount</h2>
+    <h2>Support the authors with Lighting Prism</h2>
+  </ul>
+  <div class="buybutton" id="product-component-1698234084361"></div>
+</div>
+
 <style>
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    
+  }
+  .features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+    padding: 0;
+    list-style: none;
+  }
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    color: hsl(var(--color-theme-700));
+    font-weight: 800;
+  }
+  .highlight {
+    color: hsl(var(--color-theme-900));
+    font-weight: 800;
+  }
   h1 {
     font-size: 2rem;
     text-align: center;
-    margin: 50px 0;
+    margin: 3em 0;
     color: hsl(var(--color-theme-600));
     font-weight: 800;
   }
   .buybutton {
     margin: 0 auto;
+    margin-bottom: 3rem;
     max-width: 1200px;
     width: 100%;
   }
 </style>
+
 <script type="text/javascript">
 /*<![CDATA[*/
 (function () {
@@ -75,32 +108,34 @@ import Container from "../components/Container.astro"
               title: {
                 "font-family": "Open Sans, sans-serif",
                 "font-weight": "normal",
-                color: "#f4b324",
+                color: "#fff",
               },
               button: {
                 "font-family": "Open Sans, sans-serif",
                 ":hover": {
-                  "background-color": "#dca120",
+                  "background-color": "#fff",
                 },
-                "background-color": "#f4b324",
+                "background-color": "#fff",
                 ":focus": {
-                  "background-color": "#dca120",
+                  "background-color": "#fff",
                 },
                 "border-radius": "15px",
                 "padding-left": "50px",
                 "padding-right": "50px",
+                color: "#000",
+                "font-weight": "bold",
               },
               price: {
                 "font-family": "Open Sans, sans-serif",
-                color: "#dc9b0b",
+                color: "#fff",
               },
               compareAt: {
                 "font-family": "Open Sans, sans-serif",
-                color: "#dc9b0b",
+                color: "#fff",
               },
               unitPrice: {
                 "font-family": "Open Sans, sans-serif",
-                color: "#dc9b0b",
+                color: "#fff",
               },
             },
             buttonDestination: function (that) {

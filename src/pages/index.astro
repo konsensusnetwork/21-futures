@@ -1,8 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon"
+import { Icon } from "astro-icon";
 
 import Container from "../components/Container.astro";
+import BuyButtonShopify from "../components/BuyButtonShopify.astro";
 import StoryCard from "../components/StoryCard.astro";
 import AuthorCard from "../components/AuthorCard.astro";
 import VideoPlayer from "../components/VideoPlayer.jsx";
@@ -17,38 +18,68 @@ const seo = {
   title: "21 Futures - Tales From The Timechain - The Bitcoin Anthology",
   description:
     "Dive into the depths of 21 brilliant minds as they unravel the future interwoven with the rise of bitcoin. From dystopian landscapes to utopian societies, '21 Futures' offers a view of possible worlds sculpted by the forces of mathematics.",
-  image: "./panama-one.png"
+  image: "./panama-one.png",
 };
-
 ---
 
 <Layout seo={seo}>
   <!-- Hero Section -->
   <div class="hero">
-    <div
-      class="next-section"
-      id="next-section"
-    >
+    <div class="next-section" id="next-section">
       <Icon name="fe:arrow-down" width="96" />
     </div>
   </div>
 
-  <Container>
-    <!-- About /  -->
-    <h1 hidden="true">21 Futures - Uncertain tomorrows</h1>
-    <h2 id="target-section" >Tales From The Timechain</h2>
-
-    <!-- <VideoPlayer class="hero-video" src="./trailer.mp4" /> -->
-
-    <h3>
-      21 Futures is a collection of short stories about the future. Each story
-      is written by a different author and explores a different possible future
-      for the world.
-    </h3>
+  <Container narrow={true}>
+    <div class="intro prose-lg prose-invert">
+      <h2>Bitcoin Anthology</h2>
+      <p>
+        From dystopian landscapes to
+        utopian societies, <span class="highlight">21 Futures</span> offers a view of possible worlds
+        sculpted by the forces of energy and mathematics.
+      </p>
+      <div class="next-section" id="next-section">
+        <Icon name="fe:arrow-down" width="96" />
+      </div>
+    </div>
+    <div class="main prose-invert prose-lg">
+      <h2>Where does the truth lie?</h2>
+      <p>
+        21 Futures is not just a collection of tales but a kaleidoscope of
+        possible tomorrows. Each author, with their unique voice and vision,
+        paints a world where bitcoin is more than just a currency. It's a
+        revolution. A movement. A reshaping of society. Whether you're a
+        crypto-enthusiast or a curious soul, this anthology promises to take you
+        on a journey through the intricacies of human potential shaped by
+        technology.
+      </p>
+      <div class="next-section" id="next-section">
+        <Icon name="fe:arrow-down" width="96" />
+      </div>
+    </div>
+    <div class="presale">
+        <BuyButtonShopify />
+    </div>
   </Container>
 </Layout>
 
 <style>
+  .main {
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .intro {
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   h1 {
     font-size: 3rem;
     margin-bottom: 2em;
@@ -56,7 +87,7 @@ const seo = {
   }
   h2 {
     font-size: 3rem;
-    margin: 2em 0;
+    margin: 1.5em 0;
     text-align: center;
   }
   h3 {
@@ -75,34 +106,28 @@ const seo = {
     align-items: center;
     color: white;
   }
-  .next-section {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.5); /* Optional */
-    font-size: 2rem;
-    cursor: pointer;
-  }
 </style>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const nextSectionButton = document.querySelector(".next-section");
-    console.log(nextSectionButton);
-    if (nextSectionButton) {
-      nextSectionButton.addEventListener("click", scrollToNextSection);
+document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("click", function(event) {
+    // Check if the clicked element or its parent has the 'next-section' class
+    let button = event.target.closest(".next-section");
+    if (button) {
+      scrollToNextSection(button);
     }
   });
+});
 
-  function scrollToNextSection() {
-    const target = document.getElementById("target-section");
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+function scrollToNextSection(button) {
+  let nextElement = button.parentElement.nextElementSibling;
+  console.log("Attempting to scroll to", nextElement);
+  if (nextElement) {
+    nextElement.scrollIntoView({ behavior: "smooth" });
+  } else {
+    console.log("No next element found!");
   }
+}
+
+
 </script>
