@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import IconButton from "@mui/material/IconButton";
 import "../styles/StoriesHero.css";
 
 function StoriesHero({ stories }) {
@@ -14,7 +16,8 @@ function StoriesHero({ stories }) {
       (prevIndex) => (prevIndex - 1 + stories.length) % stories.length
     );
   };
-
+  
+  
   const activeStory = stories[currentIndex];
   const remainingStories = [
     ...stories.slice(currentIndex + 1),
@@ -23,12 +26,10 @@ function StoriesHero({ stories }) {
 
   return (
     <div className="hero">
-      <h1 hidden="true">Stories</h1>
+      <h1 hidden={true}>Stories</h1>
       <img id="heroImg" src={activeStory.data.image} alt="Hero Image" />
       <div className="hero-content">
-        <h2>
-          {activeStory.data.title}
-        </h2>
+        <h2>{activeStory.data.title}</h2>
         <p>{activeStory.data.excerpt}</p>
         {/* <a href={`/stories/${activeStory.slug}`} className="hero-button">
           Read this story
@@ -48,12 +49,28 @@ function StoriesHero({ stories }) {
         ))}
       </ul>
       <div className="btn-group">
-        <button className="btn" onClick={previousImage}>
-          Previous
-        </button>
-        <button className="btn" onClick={nextImage}>
-          Next
-        </button>
+        <IconButton
+          onClick={previousImage}
+          aria-label="previous"
+          style={{
+            backgroundColor: "transparent",
+            padding: 0,
+            boxShadow: "none",
+          }}
+        >
+          <ChevronLeftIcon style={{ fontSize: "100px", color: "white" }} />
+        </IconButton>
+        <IconButton
+          onClick={nextImage}
+          aria-label="next"
+          style={{
+            backgroundColor: "transparent",
+            padding: 0,
+            boxShadow: "none",
+          }}
+        >
+          <ChevronRightIcon style={{ fontSize: "100px", color: "white" }} />
+        </IconButton>
       </div>
     </div>
   );
