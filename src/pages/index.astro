@@ -3,12 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon";
 
 import Container from "../components/Container.astro";
-import BuyButtonShopify from "../components/BuyButtonShopify.astro";
-import StoryCard from "../components/StoryCard.astro";
-import AuthorCard from "../components/AuthorCard.astro";
-import VideoPlayer from "../components/VideoPlayer.jsx";
 
-import { getCollection, getEntry } from "astro:content";
+
+import { getCollection } from "astro:content";
 
 // Get all entries from a collection.
 const stories = await getCollection("stories");
@@ -29,23 +26,22 @@ const seo = {
       <Icon name="fe:arrow-down" width="96" />
     </div>
   </div>
-
-  <Container narrow={true}>
+  <Container>
     <div class="intro prose-lg prose-invert">
-      <h2>Bitcoin Anthology</h2>
-      <p>
-        From dystopian landscapes to
-        utopian societies, <span class="highlight">21 Futures</span> offers a view of possible worlds
-        sculpted by the forces of energy and mathematics.
-      </p>
-      <div class="next-section" id="next-section">
-        <Icon name="fe:arrow-down" width="96" />
-      </div>
+        <h2>Bitcoin Anthology</h2>
+        <p>
+          From dystopian landscapes to
+          utopian societies, <span class="highlight">21 Futures</span> offers a view of possible worlds
+          sculpted by the forces of energy and mathematics.
+        </p>
+        <div class="next-section" id="next-section">
+          <Icon name="fe:arrow-down" width="96" />
+        </div>
     </div>
     <div class="main prose-invert prose-lg">
       <h2>Where does the truth lie?</h2>
       <p>
-        21 Futures is not just a collection of tales but a kaleidoscope of
+        <span class="highlight">21 Futures</span> is not just a collection of tales but a kaleidoscope of
         possible tomorrows. Each author, with their unique voice and vision,
         paints a world where bitcoin is more than just a currency. It's a
         revolution. A movement. A reshaping of society. Whether you're a
@@ -58,13 +54,55 @@ const seo = {
       </div>
     </div>
     <div class="presale">
-        <BuyButtonShopify />
+      <h2>Order the <span class="highlight">BOOK</span></h2>
+      <p>
+        <span class="highlight">21 Futures</span> is available for pre-order now. The book will be
+        released on the 21st of December 2023. All pre-orders will be shipped
+        before the release date.
+      <div class="buybutton" id="product-component-1698234084361"></div>
     </div>
   </Container>
 </Layout>
 
 <style>
+  h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 1.5em 0;
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin: 2em 0;
+    text-align: center;
+  }
+  .highlight {
+    color: hsl(var(--color-theme-900));
+    font-weight: 800;
+  }
+  .presale {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .features {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+  .buybutton {
+    margin-bottom: 3rem;
+  }
   .main {
+    background-color: hsl(var(--color-theme-50));
     min-height: 100vh;
     margin: 0 auto;
     display: flex;
@@ -73,6 +111,7 @@ const seo = {
     align-items: center;
   }
   .intro {
+    background-color: hsl(var(--color-theme-50));
     min-height: 100vh;
     margin: 0 auto;
     display: flex;
@@ -80,20 +119,10 @@ const seo = {
     justify-content: center;
     align-items: center;
   }
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 2em;
-    text-align: center;
-  }
-  h2 {
-    font-size: 3rem;
-    margin: 1.5em 0;
-    text-align: center;
-  }
-  h3 {
-    font-size: 2rem;
-    margin: 2em 0;
-    text-align: center;
+  .wrapper-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .hero {
     background-size: cover;
@@ -129,5 +158,232 @@ function scrollToNextSection(button) {
   }
 }
 
+</script>
 
+
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL =
+    "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = scriptURL;
+    (
+      document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0]
+    ).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: "konsensus-network.myshopify.com",
+      storefrontAccessToken: "34b6f153cba00ad78ed6697a27d3f6e3",
+    });
+    const discountCode = '21FUTURES';
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent("product", {
+        id: "6981248811186",
+        variantId: "41700132126898",
+        node: document.getElementById("product-component-1698234084361"),
+        moneyFormat: "%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D",
+        options: {
+          product: {
+            styles: {
+              product: {
+                "@media (min-width: 601px)": {
+                  "max-width": "calc(25% - 20px)",
+                  "margin-left": "20px",
+                  "margin-bottom": "50px",
+                },
+              },
+              title: {
+                "font-family": "Open Sans, sans-serif",
+                "font-weight": "normal",
+                color: "#fff",
+              },
+              button: {
+                "font-family": "Open Sans, sans-serif",
+                ":hover": {
+                  "background-color": "#fff",
+                },
+                "background-color": "#fff",
+                ":focus": {
+                  "background-color": "#fff",
+                },
+                "border-radius": "15px",
+                "padding-left": "50px",
+                "padding-right": "50px",
+                color: "#000",
+                "font-weight": "bold",
+              },
+              price: {
+                "font-family": "Open Sans, sans-serif",
+                color: "#fff",
+              },
+              compareAt: {
+                "font-family": "Open Sans, sans-serif",
+                color: "#fff",
+              },
+              unitPrice: {
+                "font-family": "Open Sans, sans-serif",
+                color: "#fff",
+              },
+            },
+            buttonDestination: function (that) {
+              // based on onButtonClick => buttonDestination === 'checkout'
+              // https://github.com/Shopify/buy-button-js/blob/master/src/components/product.js#L647
+              that._userEvent('openCheckout');
+              that.props.tracker.track('Direct Checkout', {});
+              let checkoutWindow;
+              if (that.config.cart.popup) {
+                checkoutWindow = window.open('', 'checkout');
+              } else {
+                checkoutWindow = window;
+              }
+              const input = {
+                lineItems: [
+                  {
+                    variantId: that.selectedVariant.id,
+                    quantity: that.selectedQuantity,
+                  },
+                ],
+              };
+
+              that.props.client.checkout.create(input).then((checkout) => {
+                let suffix = '&';
+                if (checkout.webUrl.indexOf('?') === -1) suffix = '?';
+                const checkoutUrl = `${checkout.webUrl}${suffix}discount=${discountCode}`;
+                console.log(checkoutUrl);
+                checkoutWindow.location = checkoutUrl;
+              });
+            },
+            contents: {
+              options: false,
+            },
+            text: {
+              button: "Buy now",
+            },
+            googleFonts: ["Open Sans"],
+          },
+          productSet: {
+            styles: {
+              products: {
+                "@media (min-width: 601px)": {
+                  "margin-left": "-20px",
+                },
+              },
+            },
+          },
+          modalProduct: {
+            contents: {
+              img: false,
+              imgWithCarousel: true,
+              button: false,
+              buttonWithQuantity: true,
+            },
+            styles: {
+              product: {
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0px",
+                  "margin-bottom": "0px",
+                },
+              },
+              button: {
+                "font-family": "Open Sans, sans-serif",
+                ":hover": {
+                  "background-color": "#dca120",
+                },
+                "background-color": "#f4b324",
+                ":focus": {
+                  "background-color": "#dca120",
+                },
+                "border-radius": "15px",
+                "padding-left": "50px",
+                "padding-right": "50px",
+              },
+              title: {
+                "font-family": "Helvetica Neue, sans-serif",
+                "font-weight": "bold",
+                "font-size": "26px",
+                color: "#4c4c4c",
+              },
+              price: {
+                "font-family": "Helvetica Neue, sans-serif",
+                "font-weight": "normal",
+                "font-size": "18px",
+                color: "#4c4c4c",
+              },
+              compareAt: {
+                "font-family": "Helvetica Neue, sans-serif",
+                "font-weight": "normal",
+                "font-size": "15.299999999999999px",
+                color: "#4c4c4c",
+              },
+              unitPrice: {
+                "font-family": "Helvetica Neue, sans-serif",
+                "font-weight": "normal",
+                "font-size": "15.299999999999999px",
+                color: "#4c4c4c",
+              },
+            },
+            googleFonts: ["Open Sans"],
+            text: {
+              button: "Add to cart",
+            },
+          },
+          option: {},
+          cart: {
+            styles: {
+              button: {
+                "font-family": "Open Sans, sans-serif",
+                ":hover": {
+                  "background-color": "#dca120",
+                },
+                "background-color": "#f4b324",
+                ":focus": {
+                  "background-color": "#dca120",
+                },
+                "border-radius": "15px",
+              },
+            },
+            text: {
+              total: "Subtotal",
+              button: "Checkout",
+            },
+            googleFonts: ["Open Sans"],
+          },
+          toggle: {
+            styles: {
+              toggle: {
+                "font-family": "Open Sans, sans-serif",
+                "background-color": "#f4b324",
+                ":hover": {
+                  "background-color": "#dca120",
+                },
+                ":focus": {
+                  "background-color": "#dca120",
+                },
+              },
+            },
+            googleFonts: ["Open Sans"],
+          },
+        },
+      });
+    });
+  }
+})();
+/*]]>*/
 </script>

@@ -52,7 +52,7 @@ p {
 .hero-content {
     position: absolute;
     left: 10%;
-    bottom: 50%;
+    bottom: 10%;
     max-width: 400px;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
@@ -104,8 +104,8 @@ p {
 
 .btn-group {
     position: absolute;
-    bottom: 4%;
-    left: 65%;
+    bottom: 15%;
+    left: 48%;
     transform: translateX(-50%);
     display: flex;
     gap: 20px;
@@ -122,5 +122,40 @@ p {
 }
 
 .btn:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: hsl(var(--color-theme-300));
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        background-color: hsl(var(--color-theme-50));
+    }
+    .hero:before {
+        visibility: hidden;
+    }
+    .hero-content {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .cards-list {
+        visibility: hidden;
+    }
+    .btn-group {
+        position: relative;
+        bottom: 20px;
+        left: 0;
+        transform: translateX(0);
+        margin-bottom: 2rem;
+    }
+    h2 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+    .btn:hover {
+        background-color: hsl(var(--color-theme-200));
+        color: hsl(var(--color-theme-900));
+    }
 }

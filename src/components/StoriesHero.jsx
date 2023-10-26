@@ -26,11 +26,13 @@ function StoriesHero({ stories }) {
       <h1 hidden="true">Stories</h1>
       <img id="heroImg" src={activeStory.data.image} alt="Hero Image" />
       <div className="hero-content">
-        <h2>{activeStory.data.title}</h2>
+        <h2>
+          {activeStory.data.title}
+        </h2>
         <p>{activeStory.data.excerpt}</p>
-        <a href={`/stories/${activeStory.slug}`} className="hero-button">
+        {/* <a href={`/stories/${activeStory.slug}`} className="hero-button">
           Read this story
-        </a>
+        </a> */}
       </div>
       <ul className="cards-list">
         {remainingStories.map((story, index) => (
