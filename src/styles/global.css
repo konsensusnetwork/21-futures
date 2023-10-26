@@ -19,10 +19,6 @@
 }
 
 :root {
-  --container-max-width: 1200px;
-  --container-max-width-narrow: 600px;
-  --container-padding: 0 1rem;
-
   /* colors */
   --hue: 197;
 
@@ -53,20 +49,29 @@ body {
 h1 {
   font-family: 'GaramondPremrPro', sans-serif;
   font-size: 3rem;
-  font-weight: 800;
-  text-align: center;
+  font-weight: 700;
 }
 
 h2 {
   font-family: 'GaramondPremrPro', sans-serif;
   font-size: 2rem;
   font-weight: 600;
-  text-align: center;
 }
 
 h3 {
   font-family: 'GaramondPremrPro', sans-serif;
   font-size: 1.5rem;
+  font-weight: 500;
+}
+p {
+  font-size: 1.25rem;
   font-weight: 400;
-  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.highlight {
+  color: hsl(var(--color-theme-600));
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.3rem;
 }
