@@ -49,28 +49,12 @@ function StoriesHero({ stories }) {
         ))}
       </ul>
       <div className="btn-group">
-        <IconButton
-          onClick={previousImage}
-          aria-label="previous"
-          style={{
-            backgroundColor: "transparent",
-            padding: 0,
-            boxShadow: "none",
-          }}
-        >
-          <ChevronLeftIcon style={{ fontSize: "100px", color: "white" }} />
-        </IconButton>
-        <IconButton
-          onClick={nextImage}
-          aria-label="next"
-          style={{
-            backgroundColor: "transparent",
-            padding: 0,
-            boxShadow: "none",
-          }}
-        >
-          <ChevronRightIcon style={{ fontSize: "100px", color: "white" }} />
-        </IconButton>
+        <button className="btn" onClick={previousImage}>
+          Previous
+        </button>
+        <button className="btn" onClick={nextImage}>
+          Next
+        </button>
       </div>
     </div>
   );
