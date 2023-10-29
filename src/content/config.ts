@@ -20,6 +20,8 @@ const authorCollection = defineCollection({
         podcastUrl: z.string().optional(),
         npub: z.string().optional(),
         twitter: z.string().optional(),
+        website: z.string().optional(),
+        lightningAddress: z.string().optional(),
     }),
 });
 
