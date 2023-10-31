@@ -9,6 +9,20 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Kallisto';
+  src: url('/fonts/Kallisto Light.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ITC Franklin Gothic Std';
+  src: url('/fonts/ITCFranklinGothicStd-Med.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -34,11 +48,18 @@
   --color-theme-700: var(--hue) 15% 80%;
   --color-theme-800: var(--hue) 10% 95%;
   --color-theme-900: var(--hue) 5% 98%;
+
+  --bkg: linear-gradient(to top, #0f0915, #050307);
+  --dark: #050307;
+  --text: #f9f6fe;
+  --accent: #000;
 }
+
+
 
 html,
 body {
-  font-family: 'GaramondPremrPro';
+  font-family: 'ITC Franklin Gothic Std';
   height: 100%;
   margin: 0;
   padding: 0;
@@ -47,19 +68,19 @@ body {
 }
 
 h1 {
-  font-family: 'GaramondPremrPro', sans-serif;
+  font-family: 'Kallisto', sans-serif;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 h2 {
-  font-family: 'GaramondPremrPro', sans-serif;
+  font-family: 'Kallisto', sans-serif;
   font-size: 2rem;
   font-weight: 600;
 }
 
 h3 {
-  font-family: 'GaramondPremrPro', sans-serif;
+  font-family: 'Kallisto', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -70,8 +91,8 @@ p {
   margin-bottom: 1rem;
 }
 .highlight {
-  color: hsl(var(--color-theme-600));
+  color: hsl(var(--color-theme-400));
   font-style: italic;
-  font-weight: 400;
-  font-size: 1.3rem;
+  font-weight: 600;
+  font-size: 2.5rem;
 }
