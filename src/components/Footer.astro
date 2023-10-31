@@ -11,6 +11,9 @@ import { Icon } from 'astro-icon'
         <div class="footer-section">
             <h4><a href="/stories">Stories</a></h4>
         </div>
+        <div class="footer-section">
+            <h4><a href="/authors">Authors</a></h4>
+        </div>
 
         <div class="footer-section">
             <div class="social-icons">
@@ -43,12 +46,12 @@ import { Icon } from 'astro-icon'
     justify-content: center; /* Vertically centers its children */
 }
 .footer-section h4 {
-    font-weight: 'bold';
+    font-weight: 'normal';
     color: hsl(var(--color-theme-900));
     text-align: center;
 }
 .footer-section a {
-    font-size: 30px;
+    font-size: 1.3em;
 }
 .social-icons {
     display: flex;
@@ -91,5 +94,4 @@ a:hover {
         margin: 0 5px; /* reduce margin for smaller spacing on mobile */
     }
 }
-
 </style>

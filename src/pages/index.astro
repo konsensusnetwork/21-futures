@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
 import { Icon } from "astro-icon";
 import TrailerSection from "../components/TrailerSection.astro";
 
@@ -18,12 +19,16 @@ const seo = {
 ---
 
 <Layout seo={seo}>
+  <Nav />
   <!-- Hero Section -->
-  <div class="hero next-section">
-    <div>
-      <Icon name="fe:arrow-down" width="96" class="bounce"/>
+  <header class="next-section">
+    <img class="header__img" srcset="./assets/spaceLg.jpg 1999w, ./assets/spaceMd.jpg 1000w, ./assets/spaceSm.jpg 500w" src="./assets/space.jpg" alt="View of earth from space" />
+    <div class="container header-container">
+      <h1 class="h1 rise">21 Futures</h1>
+      <h3 class="h3 rise subheading">Explore the universe of tomorrow.</p>
+      <Icon class="rise subheading" name="fe:arrow-down" size="3rem" />
     </div>
-  </div>
+  </header>
   <!-- First section -->
     <div class="trailer-section next-section">
       <TrailerSection 
@@ -45,12 +50,11 @@ const seo = {
         buttonIcon="fe:arrow-right"
         videoSrc="/21f_shiro.mp4"/>
     </div>
-
     <!-- Third section -->
-    <div class="presale next-section">
+    <div class="presale next-section" id="presale">
       <h2><span class="highlight">PRESALE</span></h2>
-      <p>
-        <span class="highlight">21 Futures</span> is available for pre-order now. The book will be
+      <p class="h3 subheading">
+        Available for pre-order now. The book will be
         released on the 21st of December 2023. All pre-orders will be shipped
         before the release date.
       </p>
@@ -59,16 +63,89 @@ const seo = {
 </Layout>
 
 <style>
-  .hero {
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
+  h1 {
+    font-size: clamp(2.5rem, 6vw + 1rem, 6rem);
+    font-size: bolder;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+  }
+
+  .h2 {
+    font-size: clamp(1.8rem, 4vw + 1rem, 3.5rem);
+    font-size: bolder;
+    line-height: 1.1;
+    color: hsl(var(--color-theme-900));
+  }
+
+  .h3 {
+    font-size: clamp(1.2rem, 3vw + 1rem, 2.2rem);
+    line-height: 1.1;
+    color: hsl(var(--color-theme-900));
+    max-width: 600px;
+  }
+
+  .subheading {
+    color: hsl(var(--color-theme-900));
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  header {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
+  }
+
+  .header__img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .container {
+    margin-inline: max((80% - 90rem) / 2, 1rem);
+    padding-inline: 1rem;
+  }
+
+  .rise {
+    opacity: 0;
+    animation: rise 0.8s ease-in-out forwards;
+  }
+
+  .rise.subheading {
+    animation: rise 1.2s ease-in-out forwards 0.5s;
+  }
+
+  @keyframes rise {
+    0% {
+      transform: translateY(2rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .header-container {
+    display: grid;
+    gap: 1rem;
+    position: relative;
+    top: -5vh;
+    text-align: left;
   }
 
   .trailer-section {
@@ -93,10 +170,12 @@ const seo = {
   .buybutton {
     margin-bottom: 3rem;
   }
+
 @media (max-width: 767px) {
   .trailer-section {
     min-height: fit-content;
   }
+
 }
 </style>
 
@@ -129,8 +208,6 @@ function getNextSection(element) {
   }
   return nextElement;
 }
-
-
 </script>
 
 

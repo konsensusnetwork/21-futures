@@ -58,8 +58,21 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
     justify-content: flex-start; /* aligns button to the left when image is on the right */
   }
   .trailer {
-    width: 50vw;
+      width: 50vw;
+      background-color: hsl(var(--color-theme-900)); /* Black background to mimic a screen bezel */
+      padding: 10px; /* Padding for the black bezel */
+      margin-inline: 30px;
+      border-radius: 5px; /* Rounded corners for modern TV look */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+      overflow: hidden; /* Ensure the video corners don't protrude */
   }
+  .trailer video {
+      width: 100%; /* Make video take the full width of its parent container */
+      height: 100%; /* Ensure it takes the full height as well */
+      border-radius: 15px; /* Slightly rounded corners for the video to match the outer bezel */
+      object-fit: cover; /* Ensures the aspect ratio of the video is maintained */
+  }
+
   .text-content {
     flex: 1;
     display: flex;
@@ -106,10 +119,12 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
       max-width: 100vw; /* Ensure it spans the full width */
       width: 100%; /* Set width to 100% */
       height: auto; /* Don't constrain the height, let content dictate it */
+      padding-inline: 30px; /* Add some lateral margin */
     }
     .trailer {
       width: 100vw; /* Set trailer to full viewport width */
       max-width: 100%; /* Prevent it from overflowing its container */
+      margin: 0; /* Remove lateral margin */
     }
 }
 
