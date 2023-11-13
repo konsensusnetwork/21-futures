@@ -1,0 +1,22 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+
+const seo = {
+  title: "21 Futures - Subscribe to our newsletter",
+  description:
+    "Subscribe to our newsletter to stay up to date with the latest news and developments from 21 Futures.",
+  image: "/seo-image.png",
+};
+---
+<Layout seo={seo}>
+    <Nav></Nav>
+    <Container>
+        <h2 class="mt-48 px-8 text-left">Subscribe to our newsletter</h2>
+        <p class="mt-4 px-8 text-left">Stay up to date with the latest news and developments from 21 Futures.</p>
+        <div class="mt-4">
+            <script class="w-full" async data-uid="7a229bb674" src="https://konsensus-network.ck.page/7a229bb674/index.js"></script>    
+        </div>
+    </Container>
+</Layout>

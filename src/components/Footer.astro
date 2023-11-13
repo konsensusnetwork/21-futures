@@ -5,15 +5,15 @@ import { Icon } from 'astro-icon'
 <!-- Footer section -->
 <div class="footer-main">
     <div class="footer-container">
-        <!-- <div class="footer-section">
-            <h4><a href="/">Book</a></h4>
+        <div class="footer-section">
+            <h3><a href="/">Book</a></h3>
         </div>
         <div class="footer-section">
-            <h4><a href="/stories">Stories</a></h4>
+            <h3><a href="/subscribe">Subscribe</a></h3>
         </div>
         <div class="footer-section">
-            <h4><a href="/authors">Authors</a></h4>
-        </div> -->
+            <h3><a href="/submit">Submit</a></h3>
+        </div>
 
         <div class="footer-section">
             <div class="social-icons">
@@ -45,13 +45,14 @@ import { Icon } from 'astro-icon'
     flex-direction: column;  /* Add this */
     justify-content: center; /* Vertically centers its children */
 }
-.footer-section h4 {
+.footer-section h3 {
+    font-size: 1.2em;
     font-weight: 'normal';
     color: hsl(var(--color-theme-900));
     text-align: center;
 }
 .footer-section a {
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 .social-icons {
     display: flex;
