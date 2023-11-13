@@ -1,25 +1,25 @@
 @import url("./reset.css");
 
 /* Register your custom font family and tell the browser where to find it. */
-@font-face {
-  font-family: 'GaramondPremrPro';
-  src: url('/fonts/GaramondPremrPro.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 @font-face {
-  font-family: 'Kallisto';
+  font-family: 'KallistoLight';
   src: url('/fonts/Kallisto Light.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'ITC Franklin Gothic Std';
-  src: url('/fonts/ITCFranklinGothicStd-Med.woff2') format('woff2');
-  font-weight: 500;
+  font-family: 'KallistoMedium';
+  src: url('/fonts/Kallisto Medium.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KallistoBold';
+  src: url('/fonts/Kallisto Bold.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -59,7 +59,7 @@
 
 html,
 body {
-  font-family: 'ITC Franklin Gothic Std';
+  font-family: 'Kallisto';
   height: 100%;
   margin: 0;
   padding: 0;
@@ -68,13 +68,13 @@ body {
 }
 
 h1 {
-  font-family: 'Kallisto', sans-serif;
+  font-family: 'KallistoBold', sans-serif;
   font-size: 3rem;
   font-weight: 800;
 }
 
 h2 {
-  font-family: 'Kallisto', sans-serif;
+  font-family: 'KallistoBold', sans-serif;
   font-size: 2rem;
   font-weight: 600;
 }
@@ -85,8 +85,9 @@ h3 {
   font-weight: 500;
 }
 p {
+  font-family: "Kallisto", sans-serif;
   font-size: 1.25rem;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
   margin-bottom: 1rem;
 }

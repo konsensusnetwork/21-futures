@@ -19,12 +19,12 @@
         <li role="none">
           <a role="menuitem" href="/" class="nav-link btn">Book</a>
         </li>
-        <li role="none">
+        <!-- <li role="none">
           <a role="menuitem" href="/stories" class="nav-link btn">Stories</a>
         </li>
         <li role="none">
           <a role="menuitem" href="/authors" class="nav-link btn">Authors</a>
-        </li>
+        </li> -->
         <li role="none">
           <a role="menuitem" href="/#presale" class="nav-link btn btn--accent">Order</a>
         </li>
@@ -39,12 +39,8 @@ nav {
   z-index: 10;
   width: 100%;
   padding-block: 1.2rem;
-  background-color: transparent;
+  background-color: hsl(var(--color-theme));
   transition: background-color 800ms cubic-bezier(0.64, 0.04, 0.26, 0.87);
-}
-
-nav.active {
-  background-color: hsl(var(--color-theme-50));
 }
 
 .nav-container {
@@ -128,7 +124,11 @@ li[role="none"],
   transform: translate3d(0, 0, 0);
 }
 
+
 @media (min-width: 768px) {
+  nav.active {
+    background-color: hsl(var(--color-theme-50));
+  }
   .btn--menu {
     display: none;
   }

@@ -25,7 +25,7 @@ const seo = {
     <img class="header__img" srcset="./assets/spaceLg.jpg 1999w, ./assets/spaceMd.jpg 1000w, ./assets/spaceSm.jpg 500w" src="./assets/space.jpg" alt="View of earth from space" />
     <div class="container header-container">
       <h1 class="h1 rise">21 Futures</h1>
-      <h3 class="h3 rise subheading">Explore the universe of tomorrow.</p>
+      <h3 class="h3 rise subheading">Tales from the Timechain.</p>
       <Icon class="rise subheading" name="fe:arrow-down" size="3rem" />
     </div>
   </header>
@@ -34,7 +34,7 @@ const seo = {
       <TrailerSection 
         imagePosition="right"
         title="Bitcoin Anthology"
-        description="21 Futures is a collection of short stories that explore the future of bitcoin and the world it is shaping. The stories are written by 21 authors from around the world, each with their own unique perspective on the future."
+        description="We are finally getting ready to publish the first-ever bitcoin fiction anthology. Look forward to high-stakes human interest stories, dystopias, mystery, intergalactic affairs, and much more!"
         buttonText="See stories"
         buttonLink="/stories"
         buttonIcon="fe:arrow-right"
@@ -44,7 +44,7 @@ const seo = {
       <TrailerSection 
         imagePosition="left"
         title="Who knows the future?"
-        description="21 Futures is a collection of short stories that explore the future of bitcoin and the world it is shaping. The stories are written by 21 authors from around the world, each with their own unique perspective on the future."
+        description="21 Futures is a collection of short stories that explore the future of bitcoin and the world it is shaping. Written by 21 authors from around the world, each with their own unique perspective on the future."
         buttonText="The Authors"
         buttonLink="/authors"
         buttonIcon="fe:arrow-right"
@@ -52,13 +52,13 @@ const seo = {
     </div>
     <!-- Third section -->
     <div class="presale next-section" id="presale">
-      <h2><span class="highlight">PRESALE</span></h2>
+      <h2 class="h2"><span class="highlight">PRESALE</span></h2>
       <p class="h3 subheading">
         Available for pre-order now. The book will be
         released on the 21st of December 2023. All pre-orders will be shipped
         before the release date.
       </p>
-      <div class="buybutton" id="product-component-1698234084361"></div>
+      <div class="buybutton" id="product-component-1699881326177"></div>
     </div>
 </Layout>
 
@@ -75,6 +75,7 @@ const seo = {
     font-size: bolder;
     line-height: 1.1;
     color: hsl(var(--color-theme-900));
+    margin-top: 2em;
   }
 
   .h3 {
@@ -172,8 +173,9 @@ const seo = {
   }
 
 @media (max-width: 767px) {
+
   .trailer-section {
-    min-height: fit-content;
+    min-height: 90vh;
   }
 
 }
@@ -244,9 +246,8 @@ function getNextSection(element) {
 
     ShopifyBuy.UI.onReady(client).then(function (ui) {
       ui.createComponent("product", {
-        id: "6981248811186",
-        variantId: "41700132126898",
-        node: document.getElementById("product-component-1698234084361"),
+        id: "8706216591709",
+        node: document.getElementById("product-component-1699881326177"),
         moneyFormat: "%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D",
         options: {
           product: {

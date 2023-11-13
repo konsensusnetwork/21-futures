@@ -16,18 +16,17 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
 ---
 <div class={`section ${imagePosition === 'right' ? 'image-right' : 'image-left'}`}>
     <div class="text-content">
-        <h2>{title}</h2>
+        <h2><span class="highlight">{title}</span></h2>
         <p>
             {description}
         </p>
         <div class="buttons">
-            <a href={buttonLink}>
+            <!-- <a href={buttonLink}>
             <div class="cta-button">
                 <span>{buttonText}</span>
-                <!-- Example CTA Text -->
                 <Icon name={buttonIcon} width="36" class="bounce-right" />
             </div>
-            </a>
+            </a> -->
         </div>
     </div>
     <div class="trailer">
@@ -42,6 +41,7 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 20px;
+    margin-top: 2em;
   }
   .section {
     display: flex;
@@ -59,7 +59,7 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
   }
   .trailer {
       width: 50vw;
-      background-color: hsl(var(--color-theme-900)); /* Black background to mimic a screen bezel */
+      background-color: hsl(var(--color-theme-600)); /* Black background to mimic a screen bezel */
       padding: 10px; /* Padding for the black bezel */
       margin-inline: 30px;
       border-radius: 5px; /* Rounded corners for modern TV look */
@@ -125,6 +125,8 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
       width: 100vw; /* Set trailer to full viewport width */
       max-width: 100%; /* Prevent it from overflowing its container */
       margin: 0; /* Remove lateral margin */
+      padding: 0; /* Remove padding */
+      border-radius: 0; /* Remove rounded corners */
     }
 }
 
