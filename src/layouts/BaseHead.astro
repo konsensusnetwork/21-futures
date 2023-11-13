@@ -28,6 +28,8 @@ const image = new URL(Astro.props.image || "./seo-image.png", Astro.site);
 <title>{title || settings.title}</title>
 <meta name="title" content={title || settings.title} />
 <meta name="description" content={description || settings.description} />
+<meta name="author" content="Konsensus Network" />
+<meta name="keywords" content="fiction, short, stories, book, bitcoin, technology, anthology, writing" />
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="favicon.png" type="image/png" />
@@ -70,6 +72,7 @@ const image = new URL(Astro.props.image || "./seo-image.png", Astro.site);
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
+<meta property="twitter:site" content="@konsensusn" />
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
