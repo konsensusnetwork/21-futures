@@ -1,0 +1,50 @@
+---
+import Container from "../components/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import { Icon } from "astro-icon";
+
+const seo = {
+  title: "21 Futures - Submit your story",
+  description:
+    "Want to be featured on 21 Futures? Submit your story here.",
+  image: "/seo-image.png",
+};
+---
+<Layout seo={seo}>
+    <Nav></Nav>
+    <Container>
+        <h2 class="mt-48 px-8 text-left">Submit your story</h2>
+        <p class="mt-4 px-8 text-left">Do you have a story to tell? Send it to us, and maybe you'll be included in Volume 2.</p>
+        <div class="buttons px-8">
+            <a href="mailto:21-futures@konsensus.network">
+            <div class="cta-button">
+                <span>Send us your story</span>
+            </div>
+            </a>
+        </div>
+    </Container>
+</Layout>
+
+<style>
+    .cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    background-color: hsl(var(--color-theme-200)); /* Adjust to desired color */
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: hsl(
+      var(--color-theme-100)
+    ); /* Adjust to a slightly darker color for hover */
+  }
+  .cta-button span {
+    margin-right: 10px; /* Spacing between text and icon */
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+</style>
