@@ -3,38 +3,47 @@ import VideoPlayer from "./VideoPlayer.jsx";
 import { Icon } from "astro-icon";
 
 export interface Props {
-    imagePosition?: 'left' | 'right';
-    title?: string;
-    description?: string;
-    buttonText?: string;
-    buttonLink?: string;
-    buttonIcon?: string;
-    videoSrc?: string;
+  imagePosition?: "left" | "right";
+  title?: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  buttonIcon?: string;
+  videoSrc?: string;
 }
 
-const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, videoSrc } = Astro.props;
+const {
+  imagePosition,
+  title,
+  description,
+  buttonText,
+  buttonLink,
+  buttonIcon,
+  videoSrc,
+} = Astro.props;
 ---
-<div class={`section ${imagePosition === 'right' ? 'image-right' : 'image-left'}`}>
-    <div class="text-content">
-        <h2><span class="highlight">{title}</span></h2>
-        <p>
-            {description}
-        </p>
-        <div class="buttons">
-            <!-- <a href={buttonLink}>
+
+<div
+  class={`section ${imagePosition === "right" ? "image-right" : "image-left"}`}
+>
+  <div class="text-content">
+    <h2><span class="highlight">{title}</span></h2>
+    <p>
+      {description}
+    </p>
+    <div class="buttons">
+      <!-- <a href={buttonLink}>
             <div class="cta-button">
                 <span>{buttonText}</span>
                 <Icon name={buttonIcon} width="36" class="bounce-right" />
             </div>
             </a> -->
-        </div>
     </div>
-    <div class="trailer">
-        <VideoPlayer src={videoSrc} />
-    </div>
+  </div>
+  <div class="trailer">
+    <VideoPlayer src={videoSrc} />
+  </div>
 </div>
-
-
 
 <style>
   h2 {
@@ -45,32 +54,30 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
   }
   .section {
     display: flex;
-    flex-direction: row;  /* Default is image on the left */
+    flex-direction: row; /* Default is image on the left */
     align-items: center;
     text-align: right;
   }
 
   .section.image-right {
-    flex-direction: row-reverse;  /* Flip the order for image on the right */
+    flex-direction: row-reverse; /* Flip the order for image on the right */
     text-align: left;
   }
   .section.image-right .buttons {
     justify-content: flex-start; /* aligns button to the left when image is on the right */
   }
   .trailer {
-      width: 50vw;
-      background-color: hsl(var(--color-theme-600)); /* Black background to mimic a screen bezel */
-      padding: 10px; /* Padding for the black bezel */
-      margin-inline: 30px;
-      border-radius: 5px; /* Rounded corners for modern TV look */
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-      overflow: hidden; /* Ensure the video corners don't protrude */
+    width: 50vw;
+    margin-inline: 30px;
+    border-radius: 10px; /* Rounded corners for modern TV look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    overflow: hidden; /* Ensure the video corners don't protrude */
   }
   .trailer video {
-      width: 100%; /* Make video take the full width of its parent container */
-      height: 100%; /* Ensure it takes the full height as well */
-      border-radius: 15px; /* Slightly rounded corners for the video to match the outer bezel */
-      object-fit: cover; /* Ensures the aspect ratio of the video is maintained */
+    width: 100%; /* Make video take the full width of its parent container */
+    height: 100%; /* Ensure it takes the full height as well */
+    border-radius: 15px; /* Slightly rounded corners for the video to match the outer bezel */
+    object-fit: cover; /* Ensures the aspect ratio of the video is maintained */
   }
 
   .text-content {
@@ -106,9 +113,10 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
     font-weight: 600;
   }
 
-@media (max-width: 767px) {
-    .section, .section.image-right {
-      flex-direction: column;  /* Stack on mobile, regardless of the image position */
+  @media (max-width: 767px) {
+    .section,
+    .section.image-right {
+      flex-direction: column; /* Stack on mobile, regardless of the image position */
       align-items: center; /* Center the items */
     }
     .section {
@@ -128,8 +136,7 @@ const { imagePosition, title, description, buttonText, buttonLink, buttonIcon, v
       padding: 0; /* Remove padding */
       border-radius: 0; /* Remove rounded corners */
     }
-}
-
+  }
 
   @keyframes bounce {
     0%,

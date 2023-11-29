@@ -30,8 +30,15 @@ const seo = {
     />
     <div class="container header-container">
       <h1 class="h1 rise">21 Futures</h1>
-      <h2 class="h3 rise">Tales from the Timechain.</h2>
-      <Icon class="rise" name="fe:arrow-down" size="3rem" />
+      <h3 class="h3 rise" style="font-weight: semibold;">
+        Tales from the Timechain. The first-ever bitcoin fiction anthology.
+      </h3>
+      <Icon
+        class="rise"
+        name="fe:arrow-down"
+        style="color:rgba(2, 17, 24, 0.9);"
+        size="2rem"
+      />
     </div>
   </header>
   <!-- First section -->
@@ -59,13 +66,20 @@ const seo = {
   </div>
   <!-- Third section -->
   <div class="presale next-section" id="presale">
-    <h2 class="h2"><span class="highlight">PRESALE</span></h2>
-    <p class="subheading">Order your copy now.</p>
+    <h2 class="h2" style="margin-bottom:0.5em;">
+      <span class="highlight">Presale</span>
+    </h2>
+    <p class="subheading" style="font-weight:bold">Order your copy now.</p>
     <p class="subheading">Coming Dec 21st 2023.</p>
     <p class="subheading">
       All pre-orders will be shipped before the release date.
     </p>
-    <div class="buybutton" id="product-component-1699881326177"></div>
+    <div
+      class="buybutton"
+      style="margin-top:2em;"
+      id="product-component-1699881326177"
+    >
+    </div>
   </div>
 </Layout>
 
@@ -76,7 +90,6 @@ const seo = {
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: hsl(var(--color-theme-100));
-
   }
 
   .h2 {
@@ -90,6 +103,7 @@ const seo = {
   .h3 {
     font-size: clamp(1.2rem, 3vw + 1rem, 2.2rem);
     line-height: 1.1;
+    font-size: bolder;
     color: hsl(var(--color-theme-900));
     max-width: 600px;
     font-family: "Kallisto Light", sans-serif;
@@ -98,6 +112,7 @@ const seo = {
 
   .subheading {
     color: hsl(var(--color-theme-900));
+    margin-bottom: 1em;
   }
 
   .sr-only {
@@ -161,9 +176,12 @@ const seo = {
   }
 
   .trailer-section {
-    background-color: hsl(var(--color-theme-50));
+    background: linear-gradient(
+      to right,
+      hsl(var(--color-theme-50)),
+      hsl(var(--color-theme-100))
+    );
     min-height: 100vh;
-    margin-bottom: 3rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -172,6 +190,11 @@ const seo = {
 
   .presale {
     min-height: 100vh;
+    background: linear-gradient(
+      to right,
+      hsl(var(--color-theme-50)),
+      hsl(var(--color-theme-100))
+    );
     display: flex;
     flex-direction: column;
     align-items: center;
