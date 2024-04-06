@@ -14,7 +14,7 @@ const seo = {
   title: "21 Futures - Tales From The Timechain",
   description:
     "Short stories about the future of bitcoin and the world it is shaping. Published by Konsensus Network.",
-  image: "/hero.png",
+  image: "/heroSm.png",
 };
 ---
 
@@ -24,8 +24,9 @@ const seo = {
   <header class="next-section">
     <img
       class="header__img"
-      srcset="/heroSm.png 700w, /hero.png 1600w"
+      srcset="/heroSm.png 700w, /heroSm.png 1600w"
       sizes="(max-width: 700px) 100vw, 1600px"
+      src="/heroSm.png"
       alt="21 Futures - Tales From The Timechain"
     />
     <div class="container header-container">
@@ -110,9 +111,9 @@ const seo = {
     line-height: 1.1;
     font-size: bolder;
     color: hsl(var(--color-theme-900));
-    max-width: 600px;
     font-family: "Kallisto Light", sans-serif;
     color: hsl(var(--color-theme-100));
+    text-align: center;
   }
 
   .subheading {
@@ -177,7 +178,7 @@ const seo = {
     gap: 1rem;
     position: relative;
     top: -5vh;
-    text-align: left;
+    text-align: center;
   }
 
   .trailer-section {
