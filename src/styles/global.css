@@ -59,7 +59,6 @@
 
 html,
 body {
-  font-family: 'Kallisto';
   height: 100%;
   margin: 0;
   padding: 0;
@@ -85,15 +84,35 @@ h3 {
   font-weight: 500;
 }
 p {
-  font-family: "Kallisto", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.5;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .highlight {
   color: hsl(var(--color-theme-400));
   font-style: italic;
   font-weight: 600;
   font-size: 2.5rem;
+}
+
+.cta-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+  background-color: hsl(var(--color-theme-200)); /* Adjust to desired color */
+  border-radius: 25px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+.cta-button:hover {
+  background-color: hsl(
+    var(--color-theme-100)
+  ); /* Adjust to a slightly darker color for hover */
+}
+.cta-button span {
+  margin-right: 10px; /* Spacing between text and icon */
+  font-size: 1.2rem;
+  font-weight: 600;
 }

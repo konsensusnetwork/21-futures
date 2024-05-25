@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
-import { Icon } from "astro-icon";
-import TrailerSection from "../components/TrailerSection.astro";
+import Container from "../components/Container.astro";
+import { Icon } from "astro-icon/components";
 
 import { getCollection } from "astro:content";
 
@@ -14,356 +14,381 @@ const seo = {
   title: "21 Futures - Financial Fallout",
   description:
     "Anthology competition where you can Win $1,000 and get your story published by Konsensus Network.",
-  image: "https://cdn.sanity.io/images/pzu39djh/production/b98ecd34a39f8754746e221ffba3f3cbb2354442-1280x730.jpg",
+  image:
+    "https://cdn.sanity.io/images/pzu39djh/production/b98ecd34a39f8754746e221ffba3f3cbb2354442-1280x730.jpg",
 };
 ---
 
 <Layout seo={seo}>
+  <Nav />
   <!-- Hero Section -->
-  <header class="next-section">
-    <img
-      class="header__img"
-      srcset="https://cdn.sanity.io/images/pzu39djh/production/17ffcea6357954687533d9a60a175166cef9006a-861x1280.jpg 700w, https://cdn.sanity.io/images/pzu39djh/production/b98ecd34a39f8754746e221ffba3f3cbb2354442-1280x730.jpg 1600w"
-      alt="21 Futures - Tales From The Timechain"
-    />
-    <div class="container header-container">
-    <h1 class="h1 rise">21 Futures: Financial Fallout</h1>
-    <h1 class="h1 rise">Submission guidelines</h1>
-      <Icon
-        class="rise"
-        name="fe:arrow-down"
-        style="color:rgba(2, 17, 24, 0.5);"
-        size="2rem"
-      />
+  <section class="">
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+          <h2 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl">21 Futures</h2>
+          <h2 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl highlight">Financial Fallout</h2>
+            <p class="max-w-2xl mb-6 font-light lg:mb-8 md:text-lg lg:text-xl">Submission Guidelines</p>
+            <a href="#about" class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                Learn More
+                <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a>
+            <a href="#how-to-enter" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-400 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                Submit your story.
+            </a> 
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <img src="https://cdn.sanity.io/images/pzu39djh/production/17ffcea6357954687533d9a60a175166cef9006a-861x1280.jpg" alt="mockup">
+        </div>                
     </div>
-  </header>
-  <div class="presale next-section" id="presale">
-    <h2 class="h2"><span class="highlight">Anthology competition: Win $1,000</span></h2>
-    </br>
-    <p class="subheading" >Debt, a growing wealth gap, and the debasement of currency. The future of many economies looks dark.</p>
-    <p class="subheading" >Which catastrophic failures will we see in the next 100 years? And how will it affect ordinary citizens of the world?</p>
-    <p class="subheading" >Konsensus network seeks fiction submissions (up to 3,000 words) for its forthcoming anthology 21 Futures: Financial Fallout.</p>
-    </br></br>
-    <p class="subheading" >The 21 best stories will feature in the anthology and will be eligible to win the following prizes:</p>
-    
-    <ul>
-        <li><strong class="underline">1st place:</strong> $1,000 + feature interview</li>
-        <li><strong class="underline">2nd place:</strong> $100 + podcast appearance</li>
-        <li><strong class="underline">3rd Place:</strong> Book haul + podcast appearance</li>
-        <li><strong class="underline">4th to 21st place:</strong> Featured in anthology + anthology copy + launch appearance</li>
-    </ul>
-
-    <a class="image-link" href="https://bitcoinbook.shop/products/21-futures-tales-from-the-timechain?Format=Paperback">
-      <img 
-        src="https://cdn.sanity.io/images/pzu39djh/production/f19742929d0e71ea2350ce402e377d7af0770fab-1000x1200.png"
-        alt="21 Futures - Tales From The Timechain"
-        width="60%"
-      />
-    </a>
-</br>
-    <p class="subheading" >In order to participate, writers must buy (and are encouraged to read) 21 Futures: Tales from the Timechain. This will provide a guide for the kinds of stories we are looking for.</p>
-  <h2 class="h2" style="margin-bottom:0.5em;">What we DO want:</h3>
-    <ul>
-        <li>Stories with a clear beginning, middle, and end</li>
-        <li>Stories which include diverse and realistic characters we can root for</li>
-        <li>Stories with a unique angle on dystopia. Be creative and think outside the locations and tropes of typical sci-fi.</li>
-        <li>Stories which make us care. Stories with love, loss, joy, pain, and everything in between.</li>
-        <li>Stories which offer some kind of hope for the future.</li>
-    </ul>
-</br>
-<h2 class="h2" style="margin-bottom:0.5em;">What we DON'T want:</h3>
-    <ul>
-        <li>Stories with unnecessary violence unconnected to the plot</li>
-        <li>Nationalism, hate speech, erotica</li>
-        <li>The promotion of centralized alt coins or ‘cryptocurrency’</li>
-        <li>Manifestos on ways of life</li>
-        <li>Poetry or excerpts from novels</li>
-        <li>Satoshi Nakamoto origin stories</li>
-        <li>Stories based entirely on real-life events using real-life characters</li>
-    </ul>
-    <p class="subheading"  >Stories must be written in English (editing provided if English is not your first language).
-        <u>Maximum 3,000 max words.</u></p>
-    <p class="subheading" >Read the full competition rules <a href="#terms">here</a></p>
-
-    <div class="image-grid-container">
-      <img src="https://cdn.sanity.io/images/pzu39djh/production/d48c7f4afe14c152934574788e4f269d1753c25d-512x512.jpg" alt="21 futures cover">
-      <img src="https://cdn.sanity.io/images/pzu39djh/production/79cb31c3b4cfacb3a7be50bb225c95a021653249-512x512.jpg" alt="Cops">
-      <img src="https://cdn.sanity.io/images/pzu39djh/production/e7548d39b73855022212e50698d6334688a9c98c-1024x1024.jpg" alt="Store">
-      <img src="https://cdn.sanity.io/images/pzu39djh/production/9a23c6283e0a6a2372dce98012768da990d3d576-1024x1024.jpg" alt="VR">
-    </div>
-  </br></br>
-    <div class="how-to-enter-section">
-    <h3 class="h3" style="margin-bottom:0.5em;">
-        <span class="highlight" id="how-to-enter">How to enter:</span>
-    </h3>
-    <ol>
-        <li>Format your story as a Docx, ODT, or Word file. Use standard font, size 12 font, double-spaced. Include the title and word count in the header, along with your name and email address.</li>
-        <li>Purchase a copy of <a href="https://bitcoinbook.shop/products/21-futures-tales-from-the-timechain?Format=Paperback">21 Futures: Tales from the Timechain</a>. This can be the eBook or paperback version from the <a href="https://bitcoinbook.shop/products/21-futures-tales-from-the-timechain?Format=Paperback">publisher’s website</a> or Amazon. Save your order number and include it in your competition entry.</li>
-        <li>Send an email to <a href="mailto:write@21futures.com" target="_blank">write@21futures.com</a> with the title ‘21 Futures: Financial Fallout competition’. Attach your entry, include your order number, and clearly state your name. You will receive confirmation of receipt.</li>
-    </ol>
-      <li class="lean-li">
-        All competition entrants will be updated about their submission in September 2024. The prize winners will be announced in December 2024.
-      </li>
-        
+  </section>
+  <Container>
+    <div class="flex flex-col items-center p-6">
+      <div class="rounded-lg w-full p-4" id="about">
+        <h2 class="text-2xl font-bold mb-2 text-center highlight">
+          Anthology Competition
+        </h2>
+        <p class="text-center text-2xl underline my-12">Up to $1,850 in prizes</p>
+        <p class="mt-4">
+          Debt, a growing wealth gap, and the debasement of currency. The future
+          of many economies looks dark.
+        </p>
+        <p class="">
+          Which catastrophic failures will we see in the next 100 years? And how
+          will it affect ordinary citizens of the world?
+        </p>
+        <p class="">
+          Konsensus Network seeks fiction submissions (up to 3,000 words) for
+          its forthcoming anthology 21 Futures: Financial Fallout. The 21 best
+          stories will feature in the anthology and will be eligible to win the
+          following prizes:
+        </p>
+        <ul class="flex flex-col list-disc pl-5 mt-4 space-y-3 items-center">
+          <li class="flex items-center">
+            <Icon name="mdi:trophy" class="w-12 h-12 text-orange-500" />
+            <span class="ml-2"
+              ><strong class="underline">1st place:</strong> $1,000 + feature interview</span
+            >
+          </li>
+          <li class="flex items-center">
+            <Icon name="mdi:trophy" class="w-12 h-12 text-gray-500" />
+            <span class="ml-2"
+              ><strong class="underline">2nd place:</strong> $500 + podcast appearance</span
+            >
+          </li>
+          <li class="flex items-center">
+            <Icon name="mdi:trophy" class="w-12 h-12 text-amber-900" />
+            <span class="ml-2"
+              ><strong class="underline">3rd place:</strong> $250 + social media
+              shoutout</span
+            >
+          </li>
+          <li class="flex items-center">
+            <Icon name="mdi:trophy" class="w-12 h-12 text-purple-900" />
+            <span class="ml-2"
+              ><strong class="underline">4th place:</strong> $100 + signed book</span
+            >
+          </li>
+        </ul>
       </div>
-    </br>
-    </br>
-    <h2 id="terms" class="h2"><span class="highlight">Terms and conditions:</span></h2>
-  <p>Please ensure you read the rules carefully before entering the competition.</p>
-  <h2 class="h2"><span class="highlight">Eligibility</span></h2>
-    <p class="contained">The competition is open to writers of any nationality writing in English aged 18 and over at the time of the closing date. No members of the Konsensus Network team will be eligible to win the competition.</p>
-    <p>Entries must be entirely your own work. Any evidence to the contrary will result in immediate disqualification.</p>
-    <p>Entries must not have been published, self-published, published on any website, blog, or online forum, broadcast, have won or been placed (2nd, 3rd, runner up, etc) in any other competition.</p>
-    <p>You must inform us immediately should your entry be published elsewhere.</p>
-    <p>Entry implies acceptance of all the rules. Failure to comply may result in disqualification.</p>
+    </div>
 
+    <div>
+      <div class="text-left my-8">
+        <h2 class="">What we <span class="highlight">DO</span> want:</h2>
+        <ul>
+          <li>Stories with a clear beginning, middle, and end</li>
+          <li>
+            Stories which include diverse and realistic characters we can root
+            for
+          </li>
+          <li>
+            Stories with a unique angle on dystopia. Be creative and think
+            outside the locations and tropes of typical sci-fi.
+          </li>
+          <li>
+            Stories which make us care. Stories with love, loss, joy, pain, and
+            everything in between.
+          </li>
+          <li>Stories which offer some kind of hope for the future.</li>
+        </ul>
+      </div>
 
-    <h2 class="h2"><span class="highlight">Disqualification</span></h2>
-    <p>We disqualify entries if they are over the word limit (even by one word). </p>
-    <p>If you forget to add details – title, name, or word count – your entry will not be disqualified.</p>
+      <div class="text-right my-8">
+        <h2 class="">What we <span class="highlight">DON'T</span> want:</h2>
+        <ul>
+          <li>Stories with unnecessary violence unconnected to the plot</li>
+          <li>Nationalism, hate speech, erotica</li>
+          <li>The promotion of centralized alt coins or ‘cryptocurrency’</li>
+          <li>Manifestos on ways of life</li>
+          <li>Poetry or excerpts from novels</li>
+          <li>Satoshi Nakamoto origin stories</li>
+          <li>
+            Stories based entirely on real-life events using real-life
+            characters
+          </li>
+        </ul>
+      </div>
+      <div class="flex flex-col justify-content items-center my-8">
+        <p class="my-12 font-bold max-w-xl">
+          Stories must be written in English (editing provided if English is not
+          your first language).
+          <u>Maximum 3,000 max words.</u>
+        </p>
+        <p class="cta-button">
+          <a href="#terms"><span>Read the terms</span></a>
+        </p>
+      </div>
+    </div>
 
+    <div class="image-grid image-grid-container">
+      <img
+        src="https://cdn.sanity.io/images/pzu39djh/production/d48c7f4afe14c152934574788e4f269d1753c25d-512x512.jpg"
+        alt="21 futures cover"
+      />
+      <img
+        src="https://cdn.sanity.io/images/pzu39djh/production/79cb31c3b4cfacb3a7be50bb225c95a021653249-512x512.jpg"
+        alt="Cops"
+      />
+      <img
+        src="https://cdn.sanity.io/images/pzu39djh/production/e7548d39b73855022212e50698d6334688a9c98c-1024x1024.jpg"
+        alt="Store"
+      />
+      <img
+        src="https://cdn.sanity.io/images/pzu39djh/production/9a23c6283e0a6a2372dce98012768da990d3d576-1024x1024.jpg"
+        alt="VR"
+      />
+    </div>
 
+    <!-- How to enter -->
+    <div class="my-24" id="how-to-enter">
+      <h3 class="text-3xl">
+        <span class="highlight">How to enter?</span>
+      </h3>
+      <ol class="my-8 flex flex-col gap-8 text-left">
+        <div class="flex gap-4">
+          <Icon name="mdi:book" size={56} class="bounce-right" />
+          <li>
+            <span class="underline">Format your story</span> as a Docx, ODT, or Word file. Use standard font,
+            size 12 font, double-spaced. Include the title and word count in the
+            header, along with your name and email address.
+          </li>
+        </div>
+        <div class="flex gap-4">
+          <Icon name="mdi:shop" size={56} class="bounce-right" />
+          <li>
+            <span class="underline">Purchase a copy</span> of <a
+              href="https://bitcoinbook.shop/products/21-futures-tales-from-the-timechain?Format=Paperback" class="text-purple-500"
+              >21 Futures: Tales from the Timechain</a
+            >. This can be the eBook or paperback version from the <a
+              href="https://bitcoinbook.shop/products/21-futures-tales-from-the-timechain?Format=Paperback"
+              >publisher’s website</a
+            > or Amazon. Save your order number and include it in your competition
+            entry.
+          </li>
+        </div>
+        <div class="flex gap-4">
+          <Icon name="mdi:email" size={56} class="bounce-right" />
 
-  <h2 class="h2"><span class="highlight">General</span></h2>
-    <p>Entries can be on any subject in any style or form. They must include the theme of ‘Financial Fallout’ in a meaningful way. We do not recommend stories written for children.</p>
-    <p>You may only submit one story, so send us your best work. Please check you are submitting the correct version of your work before entering as mistakes cannot be rectified later.</p>
+          <li>
+            <span class="underline">Send an email</span> to <a href="mailto:write@21futures.com" target="_blank"
+              class="text-purple-500">write@21futures.com</a
+            > with the title ‘<span class="italic">21 Futures: Financial Fallout competition</span>’. Attach your
+            entry, include your order number, and clearly state your name. You will
+            receive confirmation of receipt.
+          </li>
+        </div>
 
+      </ol>
+      <p class="text-gray-400">
+        All competition entrants will be updated about their submission in
+        September 2024. The prize winners will be announced in December 2024.
+      </p>
+    </div>
+    <!-- Terms -->
+    <h2 id="terms" class="highlight">
+      <span class="">Terms and conditions:</span>
+    </h2>
+    <p class="text-semibold text-xl mb-24">
+      Please ensure you read the rules carefully before entering the
+      competition.
+    </p>
+    <div class="my-24 text-left text-gray-200">
 
+      <div class="text-left">
+        <h2 class="mb-8">Eligibility</span></h2>
+        <p class="">
+          The competition is open to writers of any nationality writing in English
+          aged 18 and over at the time of the closing date. No members of the
+          Konsensus Network team will be eligible to win the competition.
+        </p>
+        <p>
+          Entries must be entirely your own work. Any evidence to the contrary
+          will result in immediate disqualification.
+        </p>
+        <p>
+          Entries must not have been published, self-published, published on any
+          website, blog, or online forum, broadcast, have won or been placed (2nd,
+          3rd, runner up, etc) in any other competition.
+        </p>
+        <p>
+          You must inform us immediately should your entry be published elsewhere.
+        </p>
+        <p>
+          Entry implies acceptance of all the rules. Failure to comply may result
+          in disqualification.
+        </p>
+      </div>
 
-    <h2 class="h2"><span class="highlight">Deadline</span></h2>
-    <p>The deadline date for entries is 23:59 (UK time) on 31st August 2024.</p>
-    <p>We only accept entries via email.</p>
+      <div class="text-left">
+        <h2 class="mb-8">Disqualification</span></h2>
+        <p>
+          We disqualify entries if they are over the word limit (even by one
+          word).
+        </p>
+        <p>
+          If you forget to add details – title, name, or word count – your entry
+          will not be disqualified.
+        </p>
+      </div>
+      <h2 class="mb-8"><span class="">General</span></h2>
+      <p>
+        Entries can be on any subject in any style or form. They must include
+        the theme of ‘Financial Fallout’ in a meaningful way. We do not
+        recommend stories written for children.
+      </p>
+      <p>
+        You may only submit one story, so send us your best work. Please check
+        you are submitting the correct version of your work before entering as
+        mistakes cannot be rectified later.
+      </p>
 
+      <h2 class="mb-8"><span class="">Deadline</span></h2>
+      <p>
+        The deadline date for entries is 23:59 (UK time) on 31st August 2024.
+      </p>
+      <p>We only accept entries via email.</p>
 
+      <h2 class="mb-8"><span class="">Length</span></h2>
+      <p>
+        Short story: <u>3000 words maximum</u>. This is a hard limit. 3,001
+        words will not be accepted. There is no minimum limit for stories. The
+        title is not included in the word count.
+      </p>
 
-    <h2 class="h2"><span class="highlight">Length</span></h2>
-    <p>Short story: <u>3000 words maximum</u>. This is a hard limit. 3,001 words will not be accepted. There is no minimum limit for stories. The title is not included in the word count.</p>
-    
-    <h2 class="h2"><span class="highlight">Format</span></h2>
-    <ul>
+      <h2 class="mb-8"><span class="">Format</span></h2>
+      <ul class="mb-8">
         <li>Add the word count to the top right of the first page.</li>
         <li>Do not add cover or title pages.</li>
         <li>Use any standard font in 12pt.</li>
-        <li>Double line spaced (i.e., a blank line space between each line).</li>
+        <li>
+          Double line spaced (i.e., a blank line space between each line).
+        </li>
         <li>Number the pages in the centre at the bottom of the page.</li>
-        <li>Save the file as a Microsoft Word document – .doc or .docx. We also accept file types .odt, .rtf. No PDFs please. Please don’t include artwork, sound files or any non-text elements in your entry.</li>
-        <li>The file name should be the title of the story only, typed exactly the same as on the document.</li>
-        <li>For untitled pieces, save the document with the first line of the story instead.</li>
-    </ul>
+        <li>
+          Save the file as a Microsoft Word document – .doc or .docx. We also
+          accept file types .odt, .rtf. No PDFs please. Please don’t include
+          artwork, sound files or any non-text elements in your entry.
+        </li>
+        <li>
+          The file name should be the title of the story only, typed exactly the
+          same as on the document.
+        </li>
+        <li>
+          For untitled pieces, save the document with the first line of the
+          story instead.
+        </li>
+      </ul>
 
-  <h2 class="h2"><span class="highlight">Prize</span></h2>
-  <ul>
-    <li>The winner shall receive US$1,000 (or equivalent local currency) by bank transfer or US$1,000 worth of bitcoin (at the time of transfer) on publication of the book (scheduled Mar 2025). They will also be awarded a feature interview, published and promoted by Konsensus Network, and an appearance on the 21 Futures podcast.</li>
-    <li>Second place shall receive $100 (same terms as the winner) and a podcast appearance.</li>
-    <li>Third place shall receive the choice of any 3 books from bitcoinbook.shop in physical copy, delivered worldwide and a podcast appearance.</li>
-    <li>4th to 21st place receive a physical copy of the anthology, delivered worldwide, an author’s bio in the book (with one promotional link permitted), and an appearance on the online launch event.</li>
-  </ul>
-  <h2 class="h2"><span class="highlight">Length</span></h2>
-  <p>Short story: <u>3000 words maximum</u>. This is a hard limit. 3,001 words will not be accepted. There is no minimum limit for stories. The title is not included in the word count.</p>
+      <h2 class="mb-8"><span class="">Prize</span></h2>
+      <ul class="mb-8">
+        <li>
+          The winner shall receive US$1,000 (or equivalent local currency) by
+          bank transfer or US$1,000 worth of bitcoin (at the time of transfer)
+          on publication of the book (scheduled Mar 2025). They will also be
+          awarded a feature interview, published and promoted by Konsensus
+          Network, and an appearance on the 21 Futures podcast.
+        </li>
+        <li>
+          Second place shall receive $100 (same terms as the winner) and a
+          podcast appearance.
+        </li>
+        <li>
+          Third place shall receive the choice of any 3 books from
+          bitcoinbook.shop in physical copy, delivered worldwide and a podcast
+          appearance.
+        </li>
+        <li>
+          4th to 21st place receive a physical copy of the anthology, delivered
+          worldwide, an author’s bio in the book (with one promotional link
+          permitted), and an appearance on the online launch event.
+        </li>
+      </ul>
 
-  <h2 class="h2"><span class="highlight">Judging</span></h2>
-  <p>The entries will be judged by the editorial team at Konsensus Network. The judges’ decision is final and no individual correspondence can be entered into. Judges are unable to comment on individual entries. Judging is fair and unbiased.</p>
+      <h2 class="mb-8"><span class="">Length</span></h2>
+      <p>
+        Short story: <u>3000 words maximum</u>. This is a hard limit. 3,001
+        words will not be accepted. There is no minimum limit for stories. The
+        title is not included in the word count.
+      </p>
 
-  <h2 class="h2"><span class="highlight">Copyright</span></h2>
-  <p>Worldwide copyright of each entry remains with the author but Konsensus Network retains global unrestricted rights to publish the winning stories in any media format. All entries will be eligible to feature on the Konsensus fiction blog. This is optional, and selected authors will be contacted by the editing team.</p>
+      <h2 class="mb-8"><span class="">Judging</span></h2>
+      <p>
+        The entries will be judged by the editorial team at Konsensus Network.
+        The judges’ decision is final and no individual correspondence can be
+        entered into. Judges are unable to comment on individual entries.
+        Judging is fair and unbiased.
+      </p>
 
-  <h2 class="h2"><span class="highlight">Results & Awards</span></h2>
-  <p>Authors whose entries will feature in the anthology will be notified by email in September 2024. The top three winning stories will be announced in December 2024, and prizes will be delivered then.</p>  
-  </br>
-  </br>
-  
-  <img
-      src="https://cdn.sanity.io/images/pzu39djh/production/17ffcea6357954687533d9a60a175166cef9006a-861x1280.jpg"
-      alt="21 Futures - Tales From The Timechain"
-      width="40%"
-    />
-  </br>
-    <a href="#how-to-enter" class="scroll-link">
-      <button class="button-64" role="button"><span class="text">How to submit</span></button>
-    </a>
-</div>  </div>
+      <h2 class="mb-8"><span class="">Copyright</span></h2>
+      <p>
+        Worldwide copyright of each entry remains with the author but Konsensus
+        Network retains global unrestricted rights to publish the winning
+        stories in any media format. All entries will be eligible to feature on
+        the Konsensus fiction blog. This is optional, and selected authors will
+        be contacted by the editing team.
+      </p>
+    </div>
+
+    <div id="results" class="flex flex-col justify-content items-center">
+      <h2 class="mb-8"><span class="highlight">Results & Awards</span></h2>
+      <p class="text-2xl">
+        Authors whose entries will feature in the anthology will be notified by
+        email in September 2024. The top three winning stories will be announced
+        in December 2024, and prizes will be delivered then.
+      </p>
+
+      <img
+        src="https://cdn.sanity.io/images/pzu39djh/production/17ffcea6357954687533d9a60a175166cef9006a-861x1280.jpg"
+        alt="21 Futures - Tales From The Timechain"
+        width="500px"
+        class="my-12 align-center"
+      />
+      <a href="#how-to-enter" class="cta-button">
+        <button class="button-64" role="button"
+          ><span class="text-4xl">Submit Your Story</span></button
+        >
+      </a>
+    </div>
+  </Container>
 </Layout>
 
 <style>
-  .h1 {
-    font-size: clamp(1rem, 3vw + 1rem, 3rem);
-    font-size: bolder;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    color: hsl(var(--color-theme-100));
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  .h2 {
-    font-size: clamp(1.8rem, 4vw + 1rem, 3.5rem);
-    font-size: bolder;
-    line-height: 1.1;
-    color: hsl(var(--color-theme-900));
-    margin-top: 0.25em;
-  }
-
-  .h3 {
-    font-size: clamp(1.2rem, 3vw + 1rem, 2.2rem);
-    line-height: 1.1;
-    font-size: bolder;
-    color: hsl(var(--color-theme-900));
-    font-family: "Kallisto Light", sans-serif;
-    color: hsl(var(--color-theme-100));
-    text-align: center;
-  }
-
-  .subheading {
-    color: hsl(var(--color-theme-900));
-    margin-bottom: 1em;
-  }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-  }
-
-  header {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    position: relative;
-  }
-
-  .header__img {
-    position: absolute;
-    height: 100%;
+  .hero {
     width: 100%;
-    object-fit: cover;
+    height: 100%;
+    background: url(https://cdn.sanity.io/images/pzu39djh/production/17ffcea6357954687533d9a60a175166cef9006a-861x1280.jpg);
+    background-size: cover;
+  }
+  .darken {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(https://cdn.sanity.io/images/pzu39djh/production/17ffcea6357954687533d9a60a175166cef9006a-861x1280.jpg);
   }
 
-  .container {
-    margin-inline: max((80% - 90rem) / 2, 1rem);
-    padding-inline: 1rem;
-  }
-
-  .rise {
-    opacity: 0;
-    animation: rise 0.8s ease-in-out forwards;
-  }
-
-  .rise.subheading {
-    animation: rise 1.2s ease-in-out forwards 0.5s;
-  }
-
-  @keyframes rise {
-    0% {
-      transform: translateY(2rem);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .header-container {
-    display: grid;
-    gap: 1rem;
-    position: relative;
-    top: -5vh;
-    text-align: center;
-  }
-
-  .trailer-section {
-    background: linear-gradient(
-      to right,
-      hsl(var(--color-theme-50)),
-      hsl(var(--color-theme-100))
-    );
-    min-height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row-reverse;
-    text-align: justify;
-    white-space: pre-line;
-  }
-
-  .presale {
-    min-height: 100vh;
-    background: linear-gradient(
-      to right,
-      hsl(var(--color-theme-50)),
-      hsl(var(--color-theme-100))
-    );
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .buybutton {
-    margin-bottom: 3rem;
-  }
-
-  .shopify-buy__product-img-wrapper {
-    border-radius: 15px;
-  }
-
-  @media (max-width: 767px) {
-    .trailer-section {
-      min-height: 90vh;
-    }
-  }
-  ul {
-    list-style-type: disc;
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto;
-    padding-left: 20px;
-    font-size: 1.2em;
-    
-  }
-
-  li {
-    margin-bottom: 10px;
-    font-size: 1.3em;
-  }
-
-  ol {
-    list-style-type: decimal;
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto;
-    padding-left: 20px;
-    font-size: 1.2em;
-  }
-
-  ol li {
-    margin-bottom: 10px;
-  }
-
-  a {
-    color: #ff6600;
-    text-decoration: underline;
-  }
-  
-  a:hover {
-    color: #3366cc;
-  }
-  
-  p {
-    text-align: center;
-  }
   .image-grid-container {
     display: flex;
     flex-wrap: wrap;
@@ -376,103 +401,24 @@ const seo = {
     height: auto;
     box-sizing: border-box;
   }
-
-  .how-to-enter-section {
-    background: linear-gradient(
-      to right,
-      hsl(var(--color-theme-100)),
-      hsl(var(--color-theme-50))
-    );
-  }
-
-  .image-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  @media (min-width: 768px) {
-    p {
-      width: 75%;
-    }
-  }
-
-  .button-64 {
-    align-items: center;
-    background-image: linear-gradient(144deg,#465E50, #0b100f 50%,#927a55);
-    border: 0;
-    border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    display: flex;
-    font-family: Phantomsans, sans-serif;
-    font-size: 20px;
-    justify-content: center;
-    line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
-    padding: 3px;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    cursor: pointer;
-  }
-
-  .button-64:active,
-  .button-64:hover {
-    outline: 0;
-  }
-
-  .button-64 span {
-    background-color: rgb(5, 6, 45);
-    padding: 16px 24px;
-    border-radius: 6px;
-    width: 100%;
-    height: 100%;
-    transition: 300ms;
-  }
-
-  .button-64:hover span {
-    background: none;
-  }
-
-  @media (min-width: 768px) {
-    .button-64 {
-      font-size: 24px;
-      min-width: 196px;
-    }
-  }
-
-  .scroll-link {
-    text-decoration: none;
-  }
-
-  .lean-li {
-    text-align: center;
-    list-style-type: none;
-  }
-  
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const scrollLinks = document.querySelectorAll('.scroll-link');
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollLinks = document.querySelectorAll(".scroll-link");
 
-  scrollLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
+    scrollLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
 
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-      }
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      });
     });
   });
-});
 </script>

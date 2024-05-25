@@ -2,13 +2,13 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import embeds from "astro-embed/integration";
 import tailwind from "@astrojs/tailwind";
-
+import icon from "astro-icon";
 import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://21futures.com/",
-  integrations: [embeds(), mdx(), tailwind(), react()],
+  integrations: [embeds(), mdx(), tailwind(), react(), icon()],
   head: {
     title: '21 Futures',
     meta: [

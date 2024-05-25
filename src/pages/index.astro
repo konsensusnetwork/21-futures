@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import TrailerSection from "../components/TrailerSection.astro";
 
 import { getCollection } from "astro:content";
@@ -31,18 +31,23 @@ const seo = {
     />
     <div class="container header-container">
       <h1 class="h1 rise">21 Futures</h1>
-      <h3 class="h3 rise" style="font-weight: semibold;">
-        Tales from the Timechain. The first-ever bitcoin fiction anthology.
-      </h3>
-      <Icon
+      <p class="h3 rise" style="font-weight: semibold;">
+        Tales from the Timechain.
+      </p>
+      <p class="h3 rise">
+        The first-ever bitcoin fiction anthology.
+      </p>
+      <div class="mx-auto">
+        <Icon
         class="rise"
-        name="fe:arrow-down"
-        style="color:rgba(2, 17, 24, 0.9);"
-        size="2rem"
+        name="mdi:arrow-down"
+        style="color:rgba(2, 17, 24, 0.9);justify-center;align-center;cursor:pointer;"
+        size="3rem"
       />
+      </div>
     </div>
   </header>
-  <!-- First section -->
+    <!-- First section -->
   <div class="trailer-section next-section">
     <TrailerSection
       imagePosition="right"
@@ -50,7 +55,7 @@ const seo = {
       description="Political dissidents scramble to cross the threshold to freedom. \n A decades-long hunt for keys incites a change in world order. \n A clear-blood dares to question the oppression of noderoids. \n A cryo-frozen oligarch wakes into his worst nightmare. \n A lowly space station miner buys a planet. \n \n In this book of diverse stories planted firmly in the bitcoin-verse, reality fractures into 21 futures. Some are wonderful, others terrifying.\n \n You are not prepared."
       buttonText="See stories"
       buttonLink="/stories"
-      buttonIcon="fe:arrow-right"
+      buttonIcon="mdi:arrow-right"
       videoSrc="https://cdn.sanity.io/files/pzu39djh/production/33a22138a5f6faf5b6257eed804ed48683b80f88.mp4"
     />
   </div>
@@ -91,36 +96,35 @@ const seo = {
     <h2 class="h2" style="margin-bottom:0.5em;">
       <span class="highlight">21 Futures: Financial Fallout — coming 2025</span>
     </h2>
+    <img
+    class="image"
+    src="https://cdn.sanity.io/images/pzu39djh/production/17ffcea6357954687533d9a60a175166cef9006a-861x1280.jpg"
+    alt="21 Futures - Tales From The Timechain"
+  />
     <p class="subheading">We are accepting short-fiction submissions for our next anthology.</p>
     <a href="/submissions">
-      <button class="button-64" role="button"><span class="text">Submissions open: Win $1,000</span></button>
+      <button class="cta-button" role="button"><span class="text">Enter the competition</span></button>
     </a>
   </br>
-  </br>
-    <img
-      src="https://cdn.sanity.io/images/pzu39djh/production/17ffcea6357954687533d9a60a175166cef9006a-861x1280.jpg"
-      alt="21 Futures - Tales From The Timechain"
-      width="40%"
-    />
+
   </div>
 </Layout>
 
 <style>
   .h1 {
     font-size: clamp(2.5rem, 6vw + 1rem, 6rem);
-    font-size: bolder;
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: hsl(var(--color-theme-100));
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+    margin-bottom: 1em;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0) 100%);
   }
 
   .h2 {
     font-size: clamp(1.8rem, 4vw + 1rem, 3.5rem);
-    font-size: bolder;
     line-height: 1.1;
     color: hsl(var(--color-theme-900));
     margin-top: 2em;
@@ -129,7 +133,6 @@ const seo = {
   .h3 {
     font-size: clamp(1.2rem, 3vw + 1rem, 2.2rem);
     line-height: 1.1;
-    font-size: bolder;
     color: hsl(var(--color-theme-900));
     font-family: "Kallisto Light", sans-serif;
     color: hsl(var(--color-theme-100));
@@ -137,7 +140,7 @@ const seo = {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0) 100%);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0) 100%);
   }
 
   .subheading {
@@ -163,6 +166,7 @@ const seo = {
     place-items: center;
     text-align: center;
     position: relative;
+    cursor: pointer;
   }
 
   .header__img {
@@ -173,19 +177,25 @@ const seo = {
   }
 
   .container {
-    margin-inline: max((80% - 90rem) / 2, 1rem);
+    max-width: 1100px;
+    margin-inline: auto;
     padding-inline: 1rem;
   }
 
   .rise {
     opacity: 0;
-    animation: rise 0.8s ease-in-out forwards;
+    animation: rise 0.8s ease-in-out forwards;    
   }
 
   .rise.subheading {
     animation: rise 1.2s ease-in-out forwards 0.5s;
   }
 
+  .image {
+    height: 500px;
+    object-fit: cover;
+    margin-block: 1em;
+  }
   @keyframes rise {
     0% {
       transform: translateY(2rem);
@@ -247,13 +257,15 @@ const seo = {
       min-height: 90vh;
     }
   }
+
+  .p {
+    font-size: 1.2em;  
+  }
   
   .button-64 {
     align-items: center;
-    background-image: linear-gradient(144deg,#465E50, #0b100f 50%,#927a55);
     border: 0;
     border-radius: 8px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
     color: #FFFFFF;
     display: flex;
@@ -278,7 +290,7 @@ const seo = {
   }
 
   .button-64 span {
-    background-color: rgb(5, 6, 45);
+    background-color: hsl(var(--color-theme-300));
     padding: 16px 24px;
     border-radius: 6px;
     width: 100%;
