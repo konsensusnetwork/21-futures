@@ -32,10 +32,10 @@ const seo = {
     <div class="container header-container">
       <h1 class="h1 rise">21 Futures</h1>
       <p class="h3 rise" style="font-weight: semibold;">
-        Tales from the Timechain.
+        Freedom through stories
       </p>
       <p class="h3 rise">
-        The first-ever bitcoin fiction anthology.
+        A cypherpunk fiction project to secure our privacy, personal liberty and financial freedom
       </p>
       <div class="mx-auto">
         <Icon
@@ -51,13 +51,19 @@ const seo = {
   <div class="trailer-section next-section">
     <TrailerSection
       imagePosition="right"
-      title="Bitcoin Anthology"
-      description="Political dissidents scramble to cross the threshold to freedom. \n A decades-long hunt for keys incites a change in world order. \n A clear-blood dares to question the oppression of noderoids. \n A cryo-frozen oligarch wakes into his worst nightmare. \n A lowly space station miner buys a planet. \n \n In this book of diverse stories planted firmly in the bitcoin-verse, reality fractures into 21 futures. Some are wonderful, others terrifying.\n \n You are not prepared."
+      title="The World First Bitcoin Fiction Anthology"
+      description="Noderoid cyborgs, hidden treasure in the Sahara, and a new world order in Panama. \n\n Some of bitcoin’s brightest minds outline how the new era of sound money could affect humanity.\n\n In this book of diverse stories planted firmly in the bitcoin-verse, reality fractures into 21 futures. Some are wonderful, others terrifying.\n\n Including stories from Knut Svanholm, Ioni Appelberg, and Niko Laamanen."
       buttonText="See stories"
       buttonLink="/stories"
       buttonIcon="mdi:arrow-right"
       videoSrc="https://cdn.sanity.io/files/pzu39djh/production/33a22138a5f6faf5b6257eed804ed48683b80f88.mp4"
     />
+
+  </div>
+  <div class="intermediate-section"> 
+    <button onclick="window.location.href='https://bitcoinbook.shop/products/21-futures-tales-from-the-timechain?Format=Paperback';" class="button-buy">
+      Buy the book
+    </button>
   </div>
   <div class="trailer-section next-section">
     <TrailerSection
@@ -82,7 +88,7 @@ const seo = {
     <p class="subheading" >Join our <a style="font-weight:bold" href="https://t.me/+9VjT18lr3mRkYTg8">Telegram group</a> to discuss financial sci-fi and related fiction.</p>
     
     <h2 class="h2" style="margin-bottom:0.5em;">
-      <span class="highlight">Read the stories</span>
+      <span class="highlight">Get the Book</span>
     </h2>
     <p class="subheading">Order Tales from the Timechain in paperback or eBook</p>
 
@@ -259,51 +265,34 @@ const seo = {
     font-size: 1.2em;  
   }
   
-  .button-64 {
-    align-items: center;
-    border: 0;
-    border-radius: 8px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    display: flex;
-    font-family: Phantomsans, sans-serif;
-    font-size: 20px;
-    justify-content: center;
-    line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
-    padding: 3px;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    cursor: pointer;
+  .intermediate-section {
+    background: linear-gradient(
+      to right,
+      hsl(var(--color-theme-50)),
+      hsl(var(--color-theme-100))
+    );  
   }
 
-  .button-64:active,
-  .button-64:hover {
-    outline: 0;
+  .button-buy {
+      position: absolute;
+      right: 40%;
+      left: 40%;
+      font-family: "Open Sans", sans-serif !important;
+      background-color: #fff;
+      border-radius: 15px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding: 15px;
+      color: #000;
+      font-weight: bold;
   }
 
-  .button-64 span {
-    background-color: hsl(var(--color-theme-300));
-    padding: 16px 24px;
-    border-radius: 6px;
-    width: 100%;
-    height: 100%;
-    transition: 300ms;
+  .button-buy:hover {
+      background-color: #fff;
   }
 
-  .button-64:hover span {
-    background: none;
-  }
-
-  @media (min-width: 768px) {
-    .button-64 {
-      font-size: 24px;
-      min-width: 196px;
-    }
+  .button-buy:focus {
+      background-color: #fff;
   }
 </style>
 
@@ -383,6 +372,7 @@ const seo = {
                     "margin-left": "20px",
                     "margin-bottom": "50px",
                   },
+                  "width": "110%"
                 },
                 title: {
                   "font-family": "Open Sans, sans-serif",
